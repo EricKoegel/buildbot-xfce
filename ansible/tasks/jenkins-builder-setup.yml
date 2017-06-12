@@ -1,0 +1,19 @@
+---
+  - name: Create Jenkins system user
+    user: name={{jenkins_user}} home={{jenkins_home}} system=yes
+          generate_ssh_key=yes
+
+  - name: Create Jenkins workspace directory
+    file: name={{jenkins_workspace}}
+          owner={{jenkins_user}}
+          group={{jenkins_user}}
+          state=directory
+
+  - name: Configure sudoers for Jenkins system user
+    lineinfile: dest="/etc/sudoers.d/{{jenkins_user}}"
+                line="{{jenkins_user}} ALL=(ALL) NOPASSWD:ALL"
+                state=present
+                create=yes
+                mode=0440
+                validate='visudo -cf %s'
+  

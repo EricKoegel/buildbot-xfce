@@ -1,0 +1,5 @@
+- src: geerlingguy.java
+  path: ansible/roles
+
+- src: https://github.com/geerlingguy/ansible-role-jenkins.git
+  path: ansible/roles

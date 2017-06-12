@@ -1,0 +1,25 @@
+---
+- name: Ubuntu Setup Playbook
+  hosts: Ubuntu
+  become: yes
+  remote_user: root
+  gather_facts: no
+
+  vars_files:
+    - vars/common_vars.yml
+
+  pre_tasks:
+    - name: install python2, ansible requires it
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      register: output
+      changed_when: output.stdout != ""
+      tags: always
+
+    - name: gather facts
+      setup:
+
+  roles:
+    - geerlingguy.java
+
+  tasks:
+    - include: tasks/jenkins-builder-setup.yml

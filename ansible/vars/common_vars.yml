@@ -1,0 +1,9 @@
+---
+jenkins_user:  'jenkins'
+jenkins_group: 'jenkins'
+jenkins_home:  "/var/lib/{{jenkins_user}}"
+jenkins_workspace: "{{jenkins_home}}/workspace"
+
+jenkins_hostname: 10.10.10.10
+jenkins_http_port: 8080
+jenkins_url_prefix: /

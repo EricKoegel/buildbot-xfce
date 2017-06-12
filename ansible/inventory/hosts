@@ -1,0 +1,5 @@
+[jenkins_master]
+Jenkins ansible_host=10.10.10.10
+
+[jenkins_builders]
+Ubuntu ansible_host=10.10.10.100

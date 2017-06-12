@@ -1,0 +1,4 @@
+*.log
+*.retry
+ansible/roles/*
+.vagrant/

@@ -1,0 +1,10 @@
+---
+  - name: Ubuntu - Install Jenkins Swarm Client Service
+    template: src=templates/jenkins-swarm-client.sh.j2 dest=/etc/init.d/jenkins-swarm-client mode=0755
+
+  - name: Ubuntu - Start Jenkins Swarm Client Service
+    service:
+        name: jenkins-swarm-client
+        enabled: yes
+        state: started
+        use: service

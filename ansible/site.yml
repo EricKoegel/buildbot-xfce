@@ -1,0 +1,4 @@
+---
+- include: jenkins-playbook.yml
+- include: ubuntu-playbook.yml
+- include: freebsd-playbook.yml

@@ -1,6 +1,6 @@
 ---
-- name: Ubuntu Setup Playbook
-  hosts: Ubuntu
+- name: FreeBSD Setup Playbook
+  hosts: FreeBSD
   become: yes
   remote_user: root
   gather_facts: no
@@ -10,7 +10,7 @@
 
   pre_tasks:
     - name: install python2, ansible requires it
-      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      raw: test -e /usr/bin/python || (pkg install -qy python)
       register: output
       changed_when: output.stdout != ""
       tags: always

@@ -7,3 +7,12 @@ jenkins_workspace: "{{jenkins_home}}/workspace"
 jenkins_hostname: 10.10.10.10
 jenkins_http_port: 8080
 jenkins_url_prefix: /
+
+
+jenkins_plugins: [swarm, git-client-plugin]
+jenkins_package_state: latest
+
+jenkins_admin_username: 'admin'
+jenkins_admin_password: 'admin'
+
+swarm_client_version: 3.4

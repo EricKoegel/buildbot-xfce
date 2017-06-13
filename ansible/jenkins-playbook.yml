@@ -18,15 +18,12 @@
     - name: gather facts
       setup:
 
+    - name: install dependencies
+      include: tasks/common-install.yml
+
   roles:
     - ansible-role-jenkins
 
   tasks:
-    - include: tasks/jenkins-slave-node-add.yml
-
-  handlers:
-    - name: "restart Apache"
-      service: name=httpd state=restarted
-
     - name: "restart Jenkins"
       service: name=jenkins state=restarted

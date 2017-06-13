@@ -8,7 +8,7 @@ import hudson.slaves.*
 {% for host in groups['jenkins_builders'] %}
 Jenkins.instance.addNode(
 new DumbSlave("{{host}}","", "{{jenkins_home}}", "1",
-              Node.Mode.EXCLUSIVE, "{{hostvars[host]['label']}}",
+              Node.Mode.EXCLUSIVE, "{{hostvars[host]}}",
               new JNLPLauncher(), new RetentionStrategy.Always(),
               new ArrayList())
 )

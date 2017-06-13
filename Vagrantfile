@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
 
       ubuntu.vm.provision "ansible" do |ansible|
             ansible.playbook = "ansible/ubuntu-playbook.yml"
-            ansible.inventory_path = "ansible/inventory/hosts"
+            ansible.verbose = true
             ubuntu.vm.box = "ubuntu/xenial64"
       end
   end
@@ -35,8 +35,13 @@ Vagrant.configure("2") do |config|
 
       jenkins.vm.provision "ansible" do |ansible|
             ansible.playbook = "ansible/jenkins-playbook.yml"
-            ansible.inventory_path = "ansible/inventory/hosts"
+            ansible.verbose = true
             jenkins.vm.box = "ubuntu/xenial64"
+
+            ansible.groups = {
+                  "jenkins_master" => ["Jenkins"],
+                  "jenkins_builders" => ["Ubuntu"],
+            }
       end
   end
 

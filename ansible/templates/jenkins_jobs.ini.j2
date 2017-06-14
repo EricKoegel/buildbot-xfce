@@ -1,0 +1,13 @@
+; {{ ansible_managed }}
+
+[job_builder]
+ignore_cache=False
+keep_descriptions=False
+include_path=.
+recursive=False
+allow_duplicates=False
+
+[jenkins]
+user={{ jenkins_admin_username }}
+password={{ jenkins_admin_password }}
+url={{ jenkins_full_url }}

@@ -1,0 +1,19 @@
+---
+- job-template:
+    name: '{name}_job'
+    project-type: freestyle
+    node: swarm
+    scm:
+    - git:
+        url: '{url}'
+        branches:
+          - origin/master
+    triggers:
+      - pollscm:
+          cron: "H/30 * * * *"
+          ignore-post-commit-hooks: True
+    builders:
+      - shell: |
+          ./autogen.sh;
+          make;
+          sudo make install;

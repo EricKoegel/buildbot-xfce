@@ -18,12 +18,25 @@
     - name: gather facts
       setup:
 
-    - name: install dependencies
+    - name: install common dependencies
       include: tasks/common-install.yml
 
   roles:
     - ansible-role-jenkins
 
   tasks:
+    - name: install packages needed by the jenkins master
+      include: tasks/jenkins/jenkins-master-package-install.yml
+
+    - name: install Jenkins Job Builder
+      pip:
+        name: jenkins-job-builder
+        state: latest
+
+    - include: tasks/jenkins/jenkins-jobs-ini-install.yml
+
+    - name: add the jobs to jenkins
+      command: jenkins-jobs update --delete-old /vagrant/ansible/jenkins-jobs
+
     - name: "restart Jenkins"
       service: name=jenkins state=restarted

@@ -1,9 +1,8 @@
 ---
-# install packages. We use state=present because FreeBSD doesn't like latest
+# install packages used by everyone.
+# We use state=present because FreeBSD doesn't like latest
         - name: Install packages
           package: name={{ item }} state=present
           with_items:
                 - git
-                - autoconf
-                - automake
                 - bash

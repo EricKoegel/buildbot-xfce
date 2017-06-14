@@ -1,0 +1,9 @@
+---
+  - name: Create Jenkins Job Builder configuration directory
+    file: name=/etc/jenkins_jobs/
+          owner={{jenkins_user}}
+          group={{jenkins_user}}
+          state=directory
+
+  - name: Ubuntu - Install Jenkins Job Builder configuration file
+    template: src=templates/jenkins_jobs.ini.j2 dest=/etc/jenkins_jobs/jenkins_jobs.ini mode=0664

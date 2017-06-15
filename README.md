@@ -15,3 +15,9 @@
 ### Deploy
 
     vagrant up
+
+### Post deployment
+
+Connect to the default page of http://10.10.10.10:8080
+The default jenkins username/password: admin/admin
+The list of default values are in ansible/vars/common_vars.yml

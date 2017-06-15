@@ -9,10 +9,15 @@ jenkins_http_port: 8080
 jenkins_url_prefix: /
 jenkins_full_url: "http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix }}"
 
-jenkins_plugins: [swarm, git-client, github]
+jenkins_plugins: [swarm, jenkins-multijob-plugin, matrix-project, yaml-axis, github, ansicolor]
+jenkins_plugin_timeout: 120
 jenkins_package_state: latest
 
 jenkins_admin_username: 'admin'
 jenkins_admin_password: 'admin'
 
 swarm_client_version: 3.4
+
+jenkins_init_changes:
+  - option: "JAVA_ARGS"
+    value: "-Dhudson.diyChunking=false"

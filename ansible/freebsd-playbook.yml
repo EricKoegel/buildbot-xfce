@@ -23,5 +23,5 @@
 
   tasks:
     - include: tasks/common-install.yml
-    - include: tasks/ubuntu/builder-package-install.yml
+    - include: tasks/freebsd/builder-package-install.yml
     - include: tasks/jenkins-builder-setup.yml

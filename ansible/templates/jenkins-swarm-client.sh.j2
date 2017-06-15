@@ -13,7 +13,7 @@
 SWARM_CLIENT_FILE="/opt/jenkins-swarm-client/swarm-client-{{ swarm_client_version }}.jar"
 
 name=`basename $0`
-cmd="java -jar ${SWARM_CLIENT_FILE} -master {{ jenkins_full_url }} -username {{ jenkins_admin_username }} -password {{ jenkins_admin_password }} -disableSslVerification -name {{ inventory_hostname }} -executors 1"
+cmd="java -jar ${SWARM_CLIENT_FILE} -master {{ jenkins_full_url }} -username {{ jenkins_admin_username }} -password {{ jenkins_admin_password }} -disableClientsUniqueId -sslFingerprints "" -name {{ inventory_hostname }} -executors 1"
 pid_file="/var/run/$name.pid"
 stdout_log="/var/log/$name.log"
 stderr_log="/var/log/$name.err"

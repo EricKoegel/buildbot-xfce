@@ -1,19 +1,31 @@
 ---
 - job-template:
-    name: '{name}_job'
+    name: '{name}'
     project-type: freestyle
-    node: swarm
     scm:
-    - git:
-        url: '{url}'
-        branches:
-          - origin/master
-    triggers:
-      - pollscm:
-          cron: "H/30 * * * *"
-          ignore-post-commit-hooks: True
+      - git:
+          url: '{url}'
+          branches:
+              - origin/master
+          wipe-workspace: false
     builders:
       - shell: |
-          ./autogen.sh;
-          make;
-          sudo make install;
+          #!/bin/bash -l
+          PKG_CONFIG_PATH=/usr/local/libdata/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig
+          LD_LIBRARY_PATH=/usr/local/lib:/usr/lib
+          export PKG_CONFIG_PATH
+          export LD_LIBRARY_PATH
+          unamestr=`uname`
+          echo -e "\e[31m running: ./autogen.sh \e[0m"
+          ./autogen.sh
+          if [[ $unamestr == *BSD* ]] || [[ $unamestr == DragonFly ]]; then
+                  echo -e "\e[31m running: gmake \e[0m"
+                  gmake
+                  echo -e "\e[31m running: gmake install \e[0m"
+                  sudo gmake install
+          else
+                  echo -e "\e[31m running: make \e[0m"
+                  make
+                  echo -e "\e[31m running: make install \e[0m"
+                  sudo make install
+          fi

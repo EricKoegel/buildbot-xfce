@@ -1,0 +1,102 @@
+---
+- job-template:
+    name: Xfce-Core
+    project-type: multijob
+    concurrent: true
+    triggers:
+        - timed: "H * * * *"
+    builders:
+        - multijob:
+            name: xfce4-dev-tools
+            condition: SUCCESSFUL
+            projects:
+                - name: xfce4-dev-tools
+                  kill-phase-on: FAILURE
+                  abort-all-job: true
+                  current-parameters: true
+        - multijob:
+            name: libxfce4util
+            condition: SUCCESSFUL
+            projects:
+                - name: libxfce4util
+                  kill-phase-on: FAILURE
+                  abort-all-job: true
+                  current-parameters: true
+        - multijob:
+            name: xfconf
+            condition: SUCCESSFUL
+            projects:
+                - name: xfconf
+                  kill-phase-on: FAILURE
+                  abort-all-job: true
+                  current-parameters: true
+        - multijob:
+            name: libxfce4ui
+            condition: SUCCESSFUL
+            projects:
+                - name: libxfce4ui
+                  kill-phase-on: FAILURE
+                  abort-all-job: true
+                  current-parameters: true
+        - multijob:
+            name: garcon-exo-and-tumbler
+            condition: SUCCESSFUL
+            projects:
+                - name: garcon
+                  kill-phase-on: FAILURE
+                  abort-all-job: true
+                  current-parameters: true
+                - name: exo
+                  kill-phase-on: FAILURE
+                  abort-all-job: true
+                  current-parameters: true
+                - name: tumbler
+                  kill-phase-on: FAILURE
+                  abort-all-job: true
+                  current-parameters: true
+        - multijob:
+            name: thunar
+            condition: SUCCESSFUL
+            projects:
+                - name: thunar
+                  kill-phase-on: FAILURE
+                  abort-all-job: true
+                  current-parameters: true
+        - multijob:
+            name: xfce-others
+            condition: SUCCESSFUL
+            projects:
+                - name: xfdesktop
+                  kill-phase-on: FAILURE
+                  abort-all-job: true
+                  current-parameters: true
+                - name: xfce4-appfinder
+                  kill-phase-on: FAILURE
+                  abort-all-job: true
+                  current-parameters: true
+                - name: xfce4-panel
+                  kill-phase-on: FAILURE
+                  abort-all-job: true
+                  current-parameters: true
+                - name: xfce4-power-manager
+                  kill-phase-on: FAILURE
+                  abort-all-job: true
+                  current-parameters: true
+                - name: xfce4-settings
+                  kill-phase-on: FAILURE
+                  abort-all-job: true
+                  current-parameters: true
+                - name: xfwm4
+                  kill-phase-on: FAILURE
+                  abort-all-job: true
+                  current-parameters: true
+                - name: xfce4-session
+                  kill-phase-on: FAILURE
+                  abort-all-job: true
+                  current-parameters: true
+
+
+- project:
+    name: Xfce-Core
+    jobs:
+      - Xfce-Core

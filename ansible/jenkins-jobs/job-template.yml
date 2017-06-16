@@ -1,16 +1,27 @@
 ---
 - job-template:
     name: '{name}'
-    project-type: freestyle
+    project-type: matrix
+    axes:
+      - axis:
+          type: slave
+          name: nodes
+          values:
+              - FreeBSD
+              - Ubuntu
     scm:
       - git:
           url: '{url}'
           branches:
               - origin/master
           wipe-workspace: false
+          skip-tag: true
+          per-build-tag: false
+          git-config-name: "Xfce Buildbot"
+          git-config-email: "nobody@localhost"
     builders:
       - shell: |
-          #!/bin/bash -l
+          #!bash -l
           PKG_CONFIG_PATH=/usr/local/libdata/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig
           LD_LIBRARY_PATH=/usr/local/lib:/usr/lib
           export PKG_CONFIG_PATH

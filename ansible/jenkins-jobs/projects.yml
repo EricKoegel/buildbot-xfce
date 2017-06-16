@@ -49,3 +49,45 @@
       - '{name}':
           name: xfce4-session
           url: git://git.xfce.org/xfce/xfce4-session
+
+- job:
+    name: ConsoleKit2
+    project-type: matrix
+    axes:
+      - axis:
+          type: slave
+          name: nodes
+          values:
+              - FreeBSD
+              - Ubuntu
+    scm:
+      - git:
+          url: https://github.com/ConsoleKit2/ConsoleKit2.git
+          branches:
+              - origin/master
+          wipe-workspace: false
+          skip-tag: true
+          per-build-tag: false
+          git-config-name: "Xfce Buildbot"
+          git-config-email: "nobody@localhost"
+    triggers:
+      - pollscm:
+          cron: "H/30 * * * *"
+          ignore-post-commit-hooks: True
+    builders:
+      - shell: |
+          #!bash -l
+          PKG_CONFIG_PATH=/usr/local/libdata/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig
+          LD_LIBRARY_PATH=/usr/local/lib:/usr/lib
+          export PKG_CONFIG_PATH
+          export LD_LIBRARY_PATH
+          unamestr=`uname`
+          echo -e "\e[31m running: ./autogen.sh \e[0m"
+          ./autogen.sh
+          if [[ $unamestr == *BSD* ]] || [[ $unamestr == DragonFly ]]; then
+                  echo -e "\e[31m running: gmake \e[0m"
+                  gmake
+          else
+                  echo -e "\e[31m running: make \e[0m"
+                  make
+          fi

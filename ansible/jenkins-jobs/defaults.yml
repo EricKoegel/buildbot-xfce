@@ -5,11 +5,12 @@
 - defaults:
     name: global
     node: swarm
-    logrotate:
-        daysToKeep: 14
-        numToKeep: 32
-        artifactDaysToKeep: 14
-        artifactNumToKeep: 32
+    properties:
+        - build-discarder:
+            days-to-keep: 32
+            num-to-keep: 128
+            artifact-days-to-keep: 16
+            artifact-num-to-keep: 32
     wrappers:
         - ansicolor:
             colormap: xterm

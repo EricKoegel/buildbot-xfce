@@ -50,25 +50,26 @@ Vagrant.configure("2") do |config|
       end
   end
 
-  config.vm.define "Debian" do |debian|
-
-      debian.vm.hostname="Debian"
-      debian.vm.box = "debian/jessie64"
-      debian.vm.network :private_network, ip: "10.10.10.100"
-
-      config.vm.synced_folder ".", "/vagrant", type: "rsync"
-
-      config.ssh.forward_agent = true
-      config.ssh.forward_x11 = true
-
-      config.vm.provider :virtualbox do |v|
-            v.name = "Debian"
-            v.memory = 512
-            v.cpus = 2
-            v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-            v.customize ["modifyvm", :id, "--ioapic", "on"]
-      end
-  end
+# Debian disabled due to https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=851667
+#  config.vm.define "Debian" do |debian|
+#
+#      debian.vm.hostname="Debian"
+#      debian.vm.box = "debian/jessie64"
+#      debian.vm.network :private_network, ip: "10.10.10.100"
+#
+#      config.vm.synced_folder ".", "/vagrant", type: "rsync"
+#
+#      config.ssh.forward_agent = true
+#      config.ssh.forward_x11 = true
+#
+#      config.vm.provider :virtualbox do |v|
+#            v.name = "Debian"
+#            v.memory = 512
+#            v.cpus = 2
+#            v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+#            v.customize ["modifyvm", :id, "--ioapic", "on"]
+#      end
+#  end
 
   config.vm.define "FreeBSD" do |freebsd|
 

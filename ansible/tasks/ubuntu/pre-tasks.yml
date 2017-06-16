@@ -1,0 +1,10 @@
+---
+        - name: install python-apt for apt_repository support
+          package: name={{ item }} state=latest
+          with_items:
+                - python-apt
+
+        - name: add jessie backports for openjdk 8
+          apt_repository:
+              repo: deb http://ftp.debian.org/debian jessie-backports main
+              state: present

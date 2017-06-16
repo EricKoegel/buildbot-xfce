@@ -19,7 +19,9 @@
       setup:
 
   roles:
-    - geerlingguy.java
+    - role: geerlingguy.java
+      java_packages:
+        - openjdk8
 
   tasks:
     - include: tasks/common-install.yml

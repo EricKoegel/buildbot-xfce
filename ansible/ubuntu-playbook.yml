@@ -18,8 +18,13 @@
     - name: gather facts
       setup:
 
+    - include: tasks/ubuntu/pre-tasks.yml
+      when: ansible_distribution == 'Debian'
+
   roles:
-    - geerlingguy.java
+    - role: geerlingguy.java
+      java_packages:
+        - openjdk-8-jdk
 
   tasks:
     - include: tasks/common-install.yml

@@ -14,6 +14,4 @@
 #        use: service
 
   - name: FreeBSD - Start Jenkins Swarm Client Service
-    command: java -jar /opt/jenkins-swarm-client/swarm-client-{{ swarm_client_version }}.jar -master http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix }} -username {{ jenkins_admin_username }} -password {{ jenkins_admin_password }} -disableSslVerification -name {{ inventory_hostname }} -executors 1
-    async: 4294967295
-    poll: 0
+    command: /usr/local/etc/rc.d/jenkins-swarm-client start

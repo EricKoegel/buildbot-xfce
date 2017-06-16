@@ -1,8 +1,15 @@
 ---
 # install packages used by everyone.
-# We use state=present because FreeBSD doesn't like latest
-        - name: Install packages
-          package: name={{ item }} state=present
-          with_items:
-                - git
-                - bash
+# - We use state=present because FreeBSD doesn't like latest
+# - We break out individual packages because we may have an older
+#   version of ansible (like 2.2.1.0-1) that can't accept a list
+#   in OpenBSD's package installer
+        - name: Install git package
+          package:
+            name: git
+            state: present
+
+        - name: Install bash package
+          package:
+            name: bash
+            state: present

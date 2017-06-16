@@ -95,6 +95,25 @@ Vagrant.configure("2") do |config|
       end
   end
 
+  config.vm.define "OpenBSD" do |openbsd|
+
+      openbsd.vm.hostname="OpenBSD"
+      openbsd.vm.box = "trombik/ansible-openbsd-6.0-amd64"
+      openbsd.vm.network :private_network, ip: "10.10.10.12"
+
+      config.vm.synced_folder ".", "/vagrant", type: "rsync"
+
+      config.ssh.shell = "sh"
+      config.ssh.forward_agent = true
+      config.ssh.forward_x11 = true
+
+      config.vm.provider :virtualbox do |v|
+            v.name = "OpenBSD"
+            v.memory = 512
+            v.cpus = 2
+      end
+  end
+
 # Ansible configuration here, add new builders to jenkins_builders
 
   config.vm.provision "ansible" do |ansible|
@@ -103,11 +122,12 @@ Vagrant.configure("2") do |config|
 
             ansible.groups = {
                   "jenkins_master" => ["Jenkins"],
-                  "jenkins_builders" => ["Ubuntu", "FreeBSD"],
+                  "jenkins_builders" => ["Ubuntu", "FreeBSD", "OpenBSD"],
             }
 
             ansible.host_vars = {
-                  "FreeBSD" => { "ansible_python_interpreter" => "/usr/local/bin/python" }
+                  "FreeBSD" => { "ansible_python_interpreter" => "/usr/local/bin/python" },
+                  "OpenBSD" => { "ansible_python_interpreter" => "/usr/local/bin/python" },
             }
   end
 end

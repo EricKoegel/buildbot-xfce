@@ -35,3 +35,6 @@
 
   - include: tasks/freebsd/freebsd-swarm-client-install.yml
     when: ansible_os_family == "FreeBSD"
+
+  - include: tasks/openbsd/openbsd-swarm-client-install.yml
+    when: ansible_os_family == "OpenBSD"

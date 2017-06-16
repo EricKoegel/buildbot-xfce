@@ -14,4 +14,4 @@
 #        use: service
 
   - name: FreeBSD - Start Jenkins Swarm Client Service
-    command: /usr/local/etc/rc.d/jenkins-swarm-client start
+    command: nohup /usr/local/etc/rc.d/jenkins-swarm-client start

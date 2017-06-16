@@ -27,13 +27,13 @@
           export PKG_CONFIG_PATH
           export LD_LIBRARY_PATH
           unamestr=`uname`
-          echo -e "\e[31m running: ./autogen.sh \e[0m"
-          ./autogen.sh
+          echo -e "\e[31m running: ./autogen.sh --enable-debug=yes \e[0m"
+          ./autogen.sh --enable-debug=yes
           if [[ $unamestr == *BSD* ]] || [[ $unamestr == DragonFly ]]; then
                   echo -e "\e[31m running: gmake \e[0m"
                   gmake
                   echo -e "\e[31m running: gmake install \e[0m"
-                  sudo gmake install
+                  gmake install
           else
                   echo -e "\e[31m running: make \e[0m"
                   make

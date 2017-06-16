@@ -1,5 +1,5 @@
 ---
-        - name: Install packages needed by the Ubuntu builder
+        - name: Install packages needed by the Ubuntu builder. This may take a while.
           package: name={{ item }} state=latest
           with_items:
                 - autoconf

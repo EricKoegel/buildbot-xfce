@@ -1,4 +1,7 @@
 ---
+# global defaults that get applied to every project. Basically,
+# we only build on the "swarm" nodes which are our builders.
+# We use ansicolor for fancy text output during the compile phase.
 - defaults:
     name: global
     node: swarm

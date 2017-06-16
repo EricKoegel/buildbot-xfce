@@ -1,4 +1,6 @@
 ---
+# All of the individual Xfce projects are here. They get grouped into
+# multijobs.yml and use the job-template.yml.
 - project:
     name: Xfce
     jobs:

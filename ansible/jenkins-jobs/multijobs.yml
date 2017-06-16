@@ -1,4 +1,9 @@
 ---
+# This job template builds all of the Xfce Core project in stages
+# based on every component's dependencies. Projects that have the
+# same common dependencies like garcon-exo-and-tumbler get put in
+# the same stage. The individual projects are located in the Xfce
+# project grouping in the projects.yml file.
 - job-template:
     name: Xfce-Core
     project-type: multijob
@@ -95,7 +100,8 @@
                   abort-all-job: true
                   current-parameters: true
 
-
+# This project creates the Xfce-Core multijob you see in Jenkins
+# from the similarly named Xfce-Core job template above.
 - project:
     name: Xfce-Core
     jobs:

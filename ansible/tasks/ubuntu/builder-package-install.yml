@@ -38,3 +38,9 @@
                 - libgtk-3-0
                 - libgtk-3-dev
                 - openjdk-8-jdk
+                - libdbus-glib-1-dev
+                - libupower-glib-dev
+                - libwnck-3-dev
+                - x11-xserver-utils
+                - libglade2-dev
+                - libxml2-dev

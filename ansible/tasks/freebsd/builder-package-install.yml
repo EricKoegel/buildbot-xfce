@@ -9,6 +9,20 @@
                 - gettext
                 - libtool
                 - devel/pkgconf
-                - xfce
                 - gmake
                 - gtk-doc
+                - libwnck
+                - gtk3
+                - gtk2
+                - p5-URI
+                - libnotify
+                - upower
+                - libXinerama
+                - libdrm
+                - mesa-libs
+                - libepoxy
+                - libXScrnSaver
+                - libwnck3
+                - iceauth
+                - desktop-file-utils
+                - libXext

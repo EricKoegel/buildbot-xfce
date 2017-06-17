@@ -72,32 +72,32 @@
             condition: SUCCESSFUL
             projects:
                 - name: xfdesktop
-                  kill-phase-on: FAILURE
-                  abort-all-job: true
+                  kill-phase-on: NEVER
+                  abort-all-job: false
                   current-parameters: true
                 - name: xfce4-appfinder
-                  kill-phase-on: FAILURE
-                  abort-all-job: true
+                  kill-phase-on: NEVER
+                  abort-all-job: false
                   current-parameters: true
                 - name: xfce4-panel
-                  kill-phase-on: FAILURE
-                  abort-all-job: true
+                  kill-phase-on: NEVER
+                  abort-all-job: false
                   current-parameters: true
                 - name: xfce4-power-manager
-                  kill-phase-on: FAILURE
-                  abort-all-job: true
+                  kill-phase-on: NEVER
+                  abort-all-job: false
                   current-parameters: true
                 - name: xfce4-settings
-                  kill-phase-on: FAILURE
-                  abort-all-job: true
+                  kill-phase-on: NEVER
+                  abort-all-job: false
                   current-parameters: true
                 - name: xfwm4
-                  kill-phase-on: FAILURE
-                  abort-all-job: true
+                  kill-phase-on: NEVER
+                  abort-all-job: false
                   current-parameters: true
                 - name: xfce4-session
-                  kill-phase-on: FAILURE
-                  abort-all-job: true
+                  kill-phase-on: NEVER
+                  abort-all-job: false
                   current-parameters: true
 
 # This project creates the Xfce-Core multijob you see in Jenkins

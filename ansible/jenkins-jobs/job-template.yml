@@ -9,6 +9,8 @@
           values:
               - FreeBSD
               - Ubuntu
+              - Debian
+              - OpenBSD
     scm:
       - git:
           url: '{url}'

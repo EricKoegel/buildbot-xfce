@@ -60,6 +60,8 @@
           values:
               - FreeBSD
               - Ubuntu
+              - Debian
+              - OpenBSD
     scm:
       - git:
           url: https://github.com/ConsoleKit2/ConsoleKit2.git

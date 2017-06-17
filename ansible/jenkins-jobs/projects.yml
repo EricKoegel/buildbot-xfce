@@ -84,8 +84,14 @@
           export PKG_CONFIG_PATH
           export LD_LIBRARY_PATH
           unamestr=`uname`
+          if [[ $unamestr == OpenBSD ]]; then
+            AUTOMAKE_VERSION=1.15
+            AUTOCONF_VERSION=2.69
+            export AUTOMAKE_VERSION
+            export AUTOCONF_VERSION
+          fi
           echo -e "\e[31m running: ./autogen.sh \e[0m"
-          ./autogen.sh
+          ./autogen.sh --enable-debug=yes
           if [[ $unamestr == *BSD* ]] || [[ $unamestr == DragonFly ]]; then
                   echo -e "\e[31m running: gmake \e[0m"
                   gmake

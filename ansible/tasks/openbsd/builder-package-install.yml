@@ -4,12 +4,12 @@
 #   in OpenBSD's package installer
         - name: Install autoconf package
           package:
-            name: autoconf-2.68
+            name: autoconf-2.69p2
             state: latest
 
         - name: Install automake package
           package:
-            name: automake-1.15
+            name: automake-1.15p0
             state: latest
 
         - name: Install intltool package
@@ -39,15 +39,50 @@
 
         - name: Install jdk package
           package:
-            name: jdk-{{ openbsd_java_version }}
+            name: jdk-1.8.0.72p0v0
             state: latest
 
         - name: Install jre package
           package:
-            name: jre-{{ openbsd_java_version }}
+            name: jre-1.8.0.72p0v0
             state: latest
 
-        - name: Install xfce package
+        - name: Install libwnck3 package
           package:
-            name: xfce
+            name: libwnck3
+            state: latest
+
+        - name: Install upower package
+          package:
+            name: upower
+            state: latest
+
+        - name: Install libnotify package
+          package:
+            name: libnotify
+            state: latest
+
+        - name: Install p5-URI package
+          package:
+            name: p5-URI
+            state: latest
+
+        - name: Install gtk+2 package
+          package:
+            name: gtk+2
+            state: latest
+
+        - name: Install gtk+3 package
+          package:
+            name: gtk+3
+            state: latest
+
+        - name: Install libwnck package
+          package:
+            name: libwnck
+            state: latest
+
+        - name: Install gobject-introspection package
+          package:
+            name: gobject-introspection
             state: latest

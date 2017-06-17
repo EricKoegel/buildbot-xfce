@@ -2,7 +2,7 @@
   - name: OpenBSD - Install Jenkins Swarm Client Service
     template: src=templates/jenkins-swarm-client.sh.j2 dest=/etc/rc.d/jenkins-swarm-client mode=0755
     vars:
-      java_path: /usr/local/jre-1.8.0/bin/
+      java_path: /usr/local/jre-{{ openbsd_java_version }}/bin/
 
   - name: OpenBSD - Start Jenkins Swarm Client Service
     shell: nohup /etc/rc.d/jenkins-swarm-client start

@@ -18,6 +18,6 @@ jenkins_admin_password: 'admin'
 
 swarm_client_version: 3.4
 
-jenkins_init_changes:
-  - option: "JAVA_ARGS"
-    value: "-Dhudson.diyChunking=false"
+openbsd_java_version: 1.8.0
+
+java_path: ""

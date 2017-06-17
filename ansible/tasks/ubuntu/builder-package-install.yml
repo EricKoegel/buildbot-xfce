@@ -17,7 +17,6 @@
                 - libnotify-dev
                 - libnotify4
                 - libpango1.0-dev
-                - libpng12-dev
                 - libstartup-notification0
                 - libwnck-common
                 - libwnck-dev
@@ -38,3 +37,4 @@
                 - gobject-introspection
                 - libgtk-3-0
                 - libgtk-3-dev
+                - openjdk-8-jdk

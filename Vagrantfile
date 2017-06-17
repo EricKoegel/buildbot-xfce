@@ -9,6 +9,8 @@ Vagrant.configure("2") do |config|
   config.vm.define "Jenkins" do |jenkins|
 
       jenkins.vm.hostname = 'Jenkins'
+      # The jenkins master needs to run on an LTS release for the
+      # geerlingguy.java role
       jenkins.vm.box = "ubuntu/xenial64"
       jenkins.vm.network :forwarded_port, guest: 8080, host: 8080
       jenkins.vm.network :private_network, ip: "10.10.10.10"

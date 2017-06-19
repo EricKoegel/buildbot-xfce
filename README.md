@@ -28,7 +28,7 @@ The list of default values are in [ansible/vars/common_vars.yml](./ansible/vars/
 
 You can also remote into the VMs by running:
 ```
-    cagrant ssh Debian
+    vagrant ssh Debian
     vagrant ssh FreeBSD
     vagrant ssh Jenkins
     vagrant ssh OpenBSD

@@ -86,3 +86,8 @@
           package:
             name: gobject-introspection
             state: latest
+
+        - name: Install dbus-glib package
+          package:
+            name: dbus-glib
+            state: latest

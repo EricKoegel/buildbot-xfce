@@ -91,3 +91,53 @@
           package:
             name: dbus-glib
             state: latest
+
+        - name: Install gtksourceviewmm3 package
+          package:
+            name: gtksourceviewmm3
+            state: latest
+
+        - name: Install gstreamer package
+          package:
+            name: gstreamer
+            state: latest
+
+        - name: Install libexif package
+          package:
+            name: libexif
+            state: latest
+
+        - name: Install libsoup package
+          package:
+            name: libsoup
+            state: latest
+
+        - name: Install vte package
+          package:
+            name: vte
+            state: latest
+
+        - name: Install libmpd package
+          package:
+            name: libmpd
+            state: latest
+
+        - name: Install pulseaudio package
+          package:
+            name: pulseaudio
+            state: latest
+
+        - name: Install clutter package
+          package:
+            name: clutter
+            state: latest
+
+        - name: Install keybinder package
+          package:
+            name: keybinder
+            state: latest
+
+        - name: Install vte3 package
+          package:
+            name: vte3
+            state: latest

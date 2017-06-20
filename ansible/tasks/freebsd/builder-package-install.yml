@@ -26,3 +26,14 @@
                 - iceauth
                 - desktop-file-utils
                 - libXext
+                - gtksourceviewmm3
+                - gstreamer
+                - libexif
+                - libsoup
+                - vte
+                - libmpd
+                - clutter
+                - pulseaudio
+                - libXmu
+                - keybinder
+                - vte3

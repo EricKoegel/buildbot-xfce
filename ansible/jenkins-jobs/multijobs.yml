@@ -68,8 +68,8 @@
                   abort-all-job: true
                   current-parameters: true
         - multijob:
-            name: xfce-others
-            condition: SUCCESSFUL
+            name: xfce-core-others
+            condition: ALWAYS
             projects:
                 - name: xfdesktop
                   kill-phase-on: NEVER
@@ -96,6 +96,58 @@
                   abort-all-job: false
                   current-parameters: true
                 - name: xfce4-session
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+        - multijob:
+            name: xfce-apps
+            condition: ALWAYS
+            projects:
+                - name: gigolo
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+                - name: parole
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+                - name: ristretto
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+                - name: xfce4-notifyd
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+                - name: xfce4-screenshooter
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+                - name: xfce4-taskmanager
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+                - name: xfce4-terminal
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+                - name: xfdashboard
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+                - name: mousepad
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+                - name: xfce4-dict
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+                - name: xfce4-volumed-pulse
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+                - name: xfmpc
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true

@@ -49,7 +49,46 @@
       - '{name}':
           name: xfce4-session
           url: git://git.xfce.org/xfce/xfce4-session
+      - '{name}':
+          name: gigolo
+          url: git://git.xfce.org/apps/gigolo
+      - '{name}':
+          name: parole
+          url: git://git.xfce.org/apps/parole
+      - '{name}':
+          name: ristretto
+          url: git://git.xfce.org/apps/ristretto
+      - '{name}':
+          name: xfce4-notifyd
+          url: git://git.xfce.org/apps/xfce4-notifyd
+      - '{name}':
+          name: xfce4-screenshooter
+          url: git://git.xfce.org/apps/xfce4-screenshooter
+      - '{name}':
+          name: xfce4-taskmanager
+          url: git://git.xfce.org/apps/xfce4-taskmanager
+      - '{name}':
+          name: xfce4-terminal
+          url: git://git.xfce.org/apps/xfce4-terminal
+      - '{name}':
+          name: xfdashboard
+          url: git://git.xfce.org/apps/xfdashboard
+      - '{name}':
+          name: mousepad
+          url: git://git.xfce.org/apps/mousepad
+      - '{name}':
+          name: xfce4-dict
+          url: git://git.xfce.org/apps/xfce4-dict
+      - '{name}':
+          name: xfce4-volumed-pulse
+          url: git://git.xfce.org/apps/xfce4-volumed-pulse
+      - '{name}':
+          name: xfmpc
+          url: git://git.xfce.org/apps/xfmpc
 
+
+# ConsoleKit2 is here because it doesn't use make install since that
+# causes all kinds of fun on systemd systems.
 - job:
     name: ConsoleKit2
     project-type: matrix

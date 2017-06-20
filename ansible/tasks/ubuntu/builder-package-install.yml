@@ -44,3 +44,14 @@
                 - x11-xserver-utils
                 - libglade2-dev
                 - libxml2-dev
+                - libgtksourceviewmm-3.0-dev
+                - libgstreamer1.0-dev
+                - libexif-dev
+                - libsoup2.4-dev
+                - libxmu-dev
+                - libvte-2.91-dev
+                - libmpd-dev
+                - libclutter-1.0-dev
+                - libpulse-dev
+                - libkeybinder-dev
+                - libkeybinder-3.0-dev

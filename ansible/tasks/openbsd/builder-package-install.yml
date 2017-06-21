@@ -2,6 +2,7 @@
 # - We break out individual packages because we may have an older
 #   version of ansible (like 2.2.1.0-1) that can't accept a list
 #   in OpenBSD's package installer
+
         - name: Install autoconf package
           package:
             name: autoconf-2.69p2
@@ -10,6 +11,16 @@
         - name: Install automake package
           package:
             name: automake-1.15p0
+            state: latest
+
+        - name: Install jdk package
+          package:
+            name: jdk-1.8.0.72p0v0
+            state: latest
+
+        - name: Install jre package
+          package:
+            name: jre-1.8.0.72p0v0
             state: latest
 
         - name: Install intltool package
@@ -35,16 +46,6 @@
         - name: Install gtk-doc package
           package:
             name: gtk-doc
-            state: latest
-
-        - name: Install jdk package
-          package:
-            name: jdk-1.8.0.72p0v0
-            state: latest
-
-        - name: Install jre package
-          package:
-            name: jre-1.8.0.72p0v0
             state: latest
 
         - name: Install libwnck3 package
@@ -140,4 +141,14 @@
         - name: Install vte3 package
           package:
             name: vte3
+            state: latest
+
+        - name: Install vala package
+          package:
+            name: vala
+            state: latest
+
+        - name: Install gstreamer1-plugins-base package
+          package:
+            name: gstreamer1-plugins-base
             state: latest

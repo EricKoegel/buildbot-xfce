@@ -37,3 +37,8 @@
                 - libXmu
                 - keybinder
                 - vte3
+                - vala
+                - gstreamer1-plugins-core
+                - libinput
+                - libevdev
+                - libudev-devd

@@ -27,3 +27,4 @@
     - include: tasks/common-install.yml
     - include: tasks/freebsd/builder-package-install.yml
     - include: tasks/jenkins-builder-setup.yml
+    - include: tasks/freebsd/swarm-client-install.yml

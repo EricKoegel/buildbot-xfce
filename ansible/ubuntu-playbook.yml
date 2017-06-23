@@ -22,3 +22,4 @@
     - include: tasks/common-install.yml
     - include: tasks/ubuntu/builder-package-install.yml
     - include: tasks/jenkins-builder-setup.yml
+    - include: tasks/ubuntu/swarm-client-install.yml

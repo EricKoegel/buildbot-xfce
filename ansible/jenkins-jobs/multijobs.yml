@@ -51,10 +51,12 @@
                   kill-phase-on: FAILURE
                   abort-all-job: true
                   current-parameters: true
+
                 - name: exo
                   kill-phase-on: FAILURE
                   abort-all-job: true
                   current-parameters: true
+
                 - name: tumbler
                   kill-phase-on: FAILURE
                   abort-all-job: true
@@ -75,26 +77,32 @@
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: xfce4-appfinder
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: xfce4-panel
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: xfce4-power-manager
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: xfce4-settings
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: xfwm4
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: xfce4-session
                   kill-phase-on: NEVER
                   abort-all-job: false
@@ -107,50 +115,161 @@
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: parole
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: ristretto
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: xfce4-notifyd
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: xfce4-screenshooter
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: xfce4-taskmanager
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: xfce4-terminal
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: xfdashboard
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: mousepad
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: xfce4-dict
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: xfce4-volumed-pulse
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+
                 - name: xfmpc
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
+        - multijob:
+            name: xfce-plugins
+            condition: ALWAYS
+            projects:
+                - name: xfce4-battery-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-calculator-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-clipman-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-cpufreq-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-datetime-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-diskperf-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-embed-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-eyes-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-fsguard-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-generic-slider
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-genmon-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-hardware-monitor-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-indicator-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-mount-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-mount-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-mpc-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-sensors-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-pulseaudio-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-netload-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+
 
 # This project creates the Xfce-Core multijob you see in Jenkins
 # from the similarly named Xfce-Core job template above.

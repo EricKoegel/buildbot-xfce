@@ -7,84 +7,184 @@
       - '{name}':
           name: xfce4-dev-tools
           url: git://git.xfce.org/xfce/xfce4-dev-tools
+
       - '{name}':
           name: libxfce4util
           url: git://git.xfce.org/xfce/libxfce4util
+
       - '{name}':
           name: libxfce4ui
           url: git://git.xfce.org/xfce/libxfce4ui
+
       - '{name}':
           name: xfconf
           url: git://git.xfce.org/xfce/xfconf
+
       - '{name}':
           name: exo
           url: git://git.xfce.org/xfce/exo
+
       - '{name}':
           name: garcon
           url: git://git.xfce.org/xfce/garcon
+
       - '{name}':
           name: tumbler
           url: git://git.xfce.org/xfce/tumbler
+
       - '{name}':
           name: thunar
           url: git://git.xfce.org/xfce/thunar
+
       - '{name}':
           name: xfdesktop
           url: git://git.xfce.org/xfce/xfdesktop
+
       - '{name}':
           name: xfce4-appfinder
           url: git://git.xfce.org/xfce/xfce4-appfinder
+
       - '{name}':
           name: xfce4-panel
           url: git://git.xfce.org/xfce/xfce4-panel
+
       - '{name}':
           name: xfce4-power-manager
           url: git://git.xfce.org/xfce/xfce4-power-manager
+
       - '{name}':
           name: xfce4-settings
           url: git://git.xfce.org/xfce/xfce4-settings
+
       - '{name}':
           name: xfwm4
           url: git://git.xfce.org/xfce/xfwm4
+
       - '{name}':
           name: xfce4-session
           url: git://git.xfce.org/xfce/xfce4-session
+
       - '{name}':
           name: gigolo
           url: git://git.xfce.org/apps/gigolo
+
       - '{name}':
           name: parole
           url: git://git.xfce.org/apps/parole
+
       - '{name}':
           name: ristretto
           url: git://git.xfce.org/apps/ristretto
+
       - '{name}':
           name: xfce4-notifyd
           url: git://git.xfce.org/apps/xfce4-notifyd
+
       - '{name}':
           name: xfce4-screenshooter
           url: git://git.xfce.org/apps/xfce4-screenshooter
+
       - '{name}':
           name: xfce4-taskmanager
           url: git://git.xfce.org/apps/xfce4-taskmanager
+
       - '{name}':
           name: xfce4-terminal
           url: git://git.xfce.org/apps/xfce4-terminal
+
       - '{name}':
           name: xfdashboard
           url: git://git.xfce.org/apps/xfdashboard
+
       - '{name}':
           name: mousepad
           url: git://git.xfce.org/apps/mousepad
+
       - '{name}':
           name: xfce4-dict
           url: git://git.xfce.org/apps/xfce4-dict
+
       - '{name}':
           name: xfce4-volumed-pulse
           url: git://git.xfce.org/apps/xfce4-volumed-pulse
+
       - '{name}':
           name: xfmpc
           url: git://git.xfce.org/apps/xfmpc
+
+      - '{name}':
+          name: xfce4-battery-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-battery-plugin
+
+      - '{name}':
+          name: xfce4-calculator-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-calculator-plugin
+
+      - '{name}':
+          name: xfce4-clipman-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-clipman-plugin
+
+      - '{name}':
+          name: xfce4-cpufreq-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-cpufreq-plugin
+
+      - '{name}':
+          name: xfce4-datetime-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-datetime-plugin
+
+      - '{name}':
+          name: xfce4-diskperf-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-datetime-plugin
+
+      - '{name}':
+          name: xfce4-embed-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-embed-plugin
+
+      - '{name}':
+          name: xfce4-eyes-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-eyes-plugin
+
+      - '{name}':
+          name: xfce4-fsguard-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-fsguard-plugin
+
+      - '{name}':
+          name: xfce4-generic-slider
+          url: git://git.xfce.org/panel-plugins/xfce4-generic-slider
+
+      - '{name}':
+          name: xfce4-genmon-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-genmon-plugin
+
+      - '{name}':
+          name: xfce4-hardware-monitor-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-hardware-monitor-plugin
+
+      - '{name}':
+          name: xfce4-indicator-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-indicator-plugin
+
+      - '{name}':
+          name: xfce4-mount-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-mount-plugin
+
+      - '{name}':
+          name: xfce4-mpc-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-mpc-plugin
+
+      - '{name}':
+          name: xfce4-sensors-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-sensors-plugin
+
+      - '{name}':
+          name: xfce4-pulseaudio-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-pulseaudio-plugin
+
+      - '{name}':
+          name: xfce4-netload-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-netload-plugin
+
+
 
 
 # ConsoleKit2 is here because it doesn't use make install since that

@@ -1,9 +1,39 @@
 ---
   - name: Create Jenkins Job Builder configuration directory
     file: name=/etc/jenkins_jobs/
-          owner={{jenkins_user}}
-          group={{jenkins_user}}
+          owner={{ jenkins_user }}
+          group={{ jenkins_user }}
           state=directory
 
   - name: Ubuntu - Install Jenkins Job Builder configuration file
     template: src=templates/jenkins_jobs.ini.j2 dest=/etc/jenkins_jobs/jenkins_jobs.ini mode=0664
+
+  - name: Create Jenkins Job Builder yml job folder
+    file: name=/home/{{ jenkins_user }}/jenkins_jobs/
+          owner={{ jenkins_user }}
+          group={{ jenkins_user }}
+          state=directory
+
+  - name: Copy the defaults.yml JJB file
+    copy:
+      src: jenkins-jobs/defaults.yml
+      dest: /home/{{ jenkins_user }}/jenkins_jobs/defaults.yml
+      mode: "u=rw,g=r,o=r"
+
+  - name: Copy the projects.yml JJB file
+    copy:
+      src: jenkins-jobs/projects.yml
+      dest: /home/{{ jenkins_user }}/jenkins_jobs/projects.yml
+      mode: "u=rw,g=r,o=r"
+
+  - name: Copy the job-template.yml JJB file
+    copy:
+      src: jenkins-jobs/job-template.yml
+      dest: /home/{{ jenkins_user }}/jenkins_jobs/job-template.yml
+      mode: "u=rw,g=r,o=r"
+
+  - name: Copy the multijobs.yml JJB file
+    copy:
+      src: jenkins-jobs/multijobs.yml
+      dest: /home/{{ jenkins_user }}/jenkins_jobs/multijobs.yml
+      mode: "u=rw,g=r,o=r"

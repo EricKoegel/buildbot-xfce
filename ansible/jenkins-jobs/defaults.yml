@@ -5,9 +5,9 @@
     name: global
     properties:
         - build-discarder:
-            days-to-keep: 32
-            num-to-keep: 128
-            artifact-days-to-keep: 16
+            days-to-keep: 14
+            num-to-keep: 64
+            artifact-days-to-keep: 7
             artifact-num-to-keep: 32
     wrappers:
         - ansicolor:
@@ -18,4 +18,8 @@
             publish-failed-builds: true
             days-to-keep: 32
             num-to-keep: 128
-    
+        - warnings:
+            console-log-parsers:
+                - Clang (LLVM based)
+                - GNU Make + GNU C Compiler (gcc)
+                - GNU C Compiler 4 (gcc)

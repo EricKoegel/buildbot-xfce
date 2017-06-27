@@ -215,6 +215,21 @@
       - pollscm:
           cron: "H/30 * * * *"
           ignore-post-commit-hooks: True
+    publishers:
+        - build-publisher:
+            publish-unstable-builds: true
+            publish-failed-builds: true
+            days-to-keep: 32
+            num-to-keep: 128
+        - warnings:
+            console-log-parsers:
+                - Clang (LLVM based)
+                - GNU Make + GNU C Compiler (gcc)
+                - GNU C Compiler 4 (gcc)
+        - cppcheck:
+            pattern: "**/cppcheck.xml"
+            ignoreblankfiles: true
+            allow-no-report: true
     builders:
       - shell: |
           #!bash -l
@@ -238,3 +253,5 @@
                   echo -e "\e[31m running: make \e[0m"
                   make
           fi
+          echo -e "\e[31m running: cppcheck --xml --xml-version=2 --enable=warning,portability,performance --force . 2> cppcheck.xml \e[0m"
+          cppcheck --xml --xml-version=2 --enable=warning,portability,performance --force . 2> cppcheck.xml

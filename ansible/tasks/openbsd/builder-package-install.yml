@@ -152,3 +152,8 @@
           package:
             name: gstreamer1-plugins-base
             state: latest
+
+        - name: Install cppcheck package
+          package:
+            name: cppcheck
+            state: latest

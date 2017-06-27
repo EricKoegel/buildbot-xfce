@@ -42,3 +42,4 @@
                 - libinput
                 - libevdev
                 - libudev-devd
+                - cppcheck

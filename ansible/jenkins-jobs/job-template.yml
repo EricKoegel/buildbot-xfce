@@ -48,5 +48,7 @@
                   echo -e "\e[31m running: make install \e[0m"
                   sudo make install
           fi
+
+      - shell: |
           echo -e "\e[31m running: cppcheck --xml --xml-version=2 --enable=warning,portability,performance --force . 2> cppcheck.xml \e[0m"
           cppcheck --xml --xml-version=2 --enable=warning,portability,performance --force . 2> cppcheck.xml

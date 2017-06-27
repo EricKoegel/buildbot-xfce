@@ -184,6 +184,38 @@
           name: xfce4-netload-plugin
           url: git://git.xfce.org/panel-plugins/xfce4-netload-plugin
 
+      - '{name}':
+          name: xfce4-notes-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-notes-plugin
+
+      - '{name}':
+          name: xfce4-places-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-places-plugin
+
+      - '{name}':
+          name: xfce4-smartbookmark-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-smartbookmark-plugin
+
+      - '{name}':
+          name: xfce4-systemload-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-systemload-plugin
+
+      - '{name}':
+          name: xfce4-wavelan-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-wavelan-plugin
+
+      - '{name}':
+          name: xfce4-weather-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-weather-plugin
+
+      - '{name}':
+          name: xfce4-whiskermenu-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-whiskermenu-plugin
+
+      - '{name}':
+          name: xfce4-xkb-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-xkb-plugin
+
 
 
 

@@ -157,3 +157,13 @@
           package:
             name: cppcheck
             state: latest
+
+        - name: Install libxklavier package
+          package:
+            name: libxklavier
+            state: latest
+
+        - name: Install libunique package
+          package:
+            name: libunique
+            state: latest

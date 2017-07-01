@@ -2,4 +2,5 @@
 - include: freebsd-playbook.yml
 - include: jenkins-playbook.yml
 - include: openbsd-playbook.yml
+- include: openindiana-playbook.yml
 - include: ubuntu-playbook.yml

@@ -23,8 +23,3 @@
                 - Clang (LLVM based)
                 - GNU Make + GNU C Compiler (gcc)
                 - GNU C Compiler 4 (gcc)
-        - cppcheck:
-            pattern: "**/cppcheck.xml"
-            ignoreblankfiles: true
-            allow-no-report: true
-

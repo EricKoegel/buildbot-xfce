@@ -1,0 +1,44 @@
+---
+# OpenIndiana doesn't seem to have generic package module suppport
+# so we can't use the common-install.yml
+# There's bugs with latest so use present.
+# search for packages here: https://pkg.openindiana.org/hipster/en/index.shtml
+
+        - name: Install packages needed by the OpenIndiana builder. This may take a while.
+          pkg5:
+            name: "{{ item }}"
+            state: present
+            accept_licenses: True
+          with_items:
+            - developer/versioning/git
+            - shell/bash
+            - developer/build/autoconf
+            - developer/build/automake
+            - developer/java/openjdk8
+            - runtime/java/openjdk8
+            - text/intltool
+            - text/gnu-gettext
+            - developer/build/libtool
+            - developer/build/gnu-make
+            - developer/documentation-tool/gtk-doc
+            - library/desktop/libwnck3
+            - library/libnotify
+            - library/perl-5/uri
+            - library/desktop/gtk2
+            - library/desktop/gtk3
+            - library/desktop/libwnck
+            - library/desktop/gobject/gobject-introspection
+            - system/library/libdbus-glib
+            - library/audio/gstreamer
+            - image/library/libexif
+            - library/libsoup
+            - library/desktop/vte
+            - library/audio/pulseaudio
+            - library/desktop/clutter
+            - library/desktop/vte-291
+            - developer/vala
+            - library/audio/gstreamer1
+            - library/desktop/libxklavier
+            - library/libunique
+            - metapackages/build-essential
+            - x11/library/libdrm

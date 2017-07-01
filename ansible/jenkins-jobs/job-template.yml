@@ -11,6 +11,7 @@
               - Ubuntu
               - Debian
               - OpenBSD
+              - OpenIndiana
     scm:
       - git:
           url: '{url}'
@@ -26,6 +27,8 @@
           #!bash -l
           PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/libdata/pkgconfig:/usr/lib/pkgconfig
           LD_LIBRARY_PATH=/usr/local/lib:/usr/lib
+          PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/gnu/bin:/bin:/usr/X11R6/bin
+          export PATH
           export PKG_CONFIG_PATH
           export LD_LIBRARY_PATH
           unamestr=`uname`
@@ -37,7 +40,7 @@
           fi
           echo -e "\e[31m running: ./autogen.sh \e[0m"
           ./autogen.sh --enable-debug=yes
-          if [[ $unamestr == *BSD* ]] || [[ $unamestr == DragonFly ]]; then
+          if [[ $unamestr == *BSD* ]] || [[ $unamestr == DragonFly ]] || [[ $unamestr == SunOS ]]; then
                   echo -e "\e[31m running: gmake \e[0m"
                   gmake
                   echo -e "\e[31m running: gmake install \e[0m"
@@ -48,7 +51,3 @@
                   echo -e "\e[31m running: make install \e[0m"
                   sudo make install
           fi
-
-      - shell: |
-          echo -e "\e[31m running: cppcheck --xml --xml-version=2 --enable=warning,portability,performance --force . 2> cppcheck.xml \e[0m"
-          cppcheck --xml --xml-version=2 --enable=warning,portability,performance --force . 2> cppcheck.xml

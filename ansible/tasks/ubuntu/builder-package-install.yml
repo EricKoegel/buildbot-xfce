@@ -57,6 +57,6 @@
                 - libkeybinder-3.0-dev
                 - valac
                 - libgstreamer-plugins-base1.0-dev
-                - cppcheck
                 - libindicator3-dev
                 - libxklavier-dev
+

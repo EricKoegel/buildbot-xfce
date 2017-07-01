@@ -42,6 +42,5 @@
                 - libinput
                 - libevdev
                 - libudev-devd
-                - cppcheck
                 - libxklavier
                 - libunique

@@ -3,6 +3,8 @@
         - name: Install packages needed by the FreeBSD builder. This may take a while.
           package: name={{ item }} state=present
           with_items:
+                - git
+                - bash
                 - autoconf
                 - automake
                 - intltool
@@ -44,3 +46,5 @@
                 - libudev-devd
                 - libxklavier
                 - libunique
+                - openjdk8
+                - openjdk8-jre

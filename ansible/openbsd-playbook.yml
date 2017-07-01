@@ -9,7 +9,6 @@
     - vars/common_vars.yml
 
   tasks:
-    - include: tasks/common-install.yml
     - include: tasks/openbsd/builder-package-install.yml
     - include: tasks/jenkins-builder-setup.yml
     - include: tasks/openbsd/swarm-client-install.yml

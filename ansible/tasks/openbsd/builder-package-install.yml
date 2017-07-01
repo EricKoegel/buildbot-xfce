@@ -3,6 +3,16 @@
 #   version of ansible (like 2.2.1.0-1) that can't accept a list
 #   in OpenBSD's package installer
 
+        - name: Install git package
+          package:
+            name: git
+            state: latest
+
+        - name: Install bash package
+          package:
+            name: bash
+            state: latest
+
         - name: Install autoconf package
           package:
             name: autoconf-2.69p2

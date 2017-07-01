@@ -4,6 +4,8 @@
           with_items:
                 - autoconf
                 - automake
+                - git
+                - bash
                 - intltool
                 - gettext
                 - libtool

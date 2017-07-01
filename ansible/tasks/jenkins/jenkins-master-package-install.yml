@@ -2,5 +2,7 @@
         - name: Install packages needed by jenkins master
           package: name={{ item }} state=latest
           with_items:
+                - git
+                - bash
                 - python-virtualenv
                 - python-pip

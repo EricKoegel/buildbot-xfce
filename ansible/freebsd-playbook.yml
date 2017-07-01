@@ -1,6 +1,6 @@
 ---
 - name: FreeBSD Setup Playbook
-  hosts: FreeBSD
+  hosts: FreeBSD:DragonFlyBSD
   become: yes
   remote_user: root
   gather_facts: no
@@ -15,16 +15,10 @@
       changed_when: output.stdout != ""
       tags: always
 
-    - name: gather facts
+  - name: gather facts
       setup:
 
-  roles:
-    - role: geerlingguy.java
-      java_packages:
-        - openjdk8
-
   tasks:
-    - include: tasks/common-install.yml
     - include: tasks/freebsd/builder-package-install.yml
     - include: tasks/jenkins-builder-setup.yml
     - include: tasks/freebsd/swarm-client-install.yml

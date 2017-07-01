@@ -12,6 +12,7 @@
               - Debian
               - OpenBSD
               - OpenIndiana
+              - DragonFlyBSD
     scm:
       - git:
           url: '{url}'

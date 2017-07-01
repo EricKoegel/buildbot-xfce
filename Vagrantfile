@@ -47,7 +47,7 @@ Vagrant.configure("2") do |config|
 
       config.vm.provider :virtualbox do |v|
             v.name = "Ubuntu"
-            v.memory = 512
+            v.memory = 1024
             v.cpus = 2
             v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
             v.customize ["modifyvm", :id, "--ioapic", "on"]
@@ -69,7 +69,7 @@ Vagrant.configure("2") do |config|
 
       config.vm.provider :virtualbox do |v|
             v.name = "Debian"
-            v.memory = 512
+            v.memory = 1024
             v.cpus = 2
             v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
             v.customize ["modifyvm", :id, "--ioapic", "on"]
@@ -92,7 +92,7 @@ Vagrant.configure("2") do |config|
 
       config.vm.provider :virtualbox do |v|
             v.name = "FreeBSD"
-            v.memory = 512
+            v.memory = 1024
             v.cpus = 2
             v.customize ["modifyvm", :id, "--hwvirtex", "on"]
             v.customize ["modifyvm", :id, "--audio", "none"]
@@ -116,7 +116,7 @@ Vagrant.configure("2") do |config|
 
       config.vm.provider :virtualbox do |v|
             v.name = "OpenBSD"
-            v.memory = 512
+            v.memory = 1024
             v.cpus = 2
       end
   end
@@ -139,6 +139,25 @@ Vagrant.configure("2") do |config|
       end
   end
 
+  config.vm.define "DragonFlyBSD" do |dragonfly|
+
+      #dragonfly.vm.hostname="DragonFlyBSD"
+      dragonfly.vm.box = "erickoegel/dfly48"
+      #dragonfly.vm.network "private_network", ip: "10.10.10.105"
+      dragonfly.vm.boot_timeout = 600
+
+      config.ssh.shell = "sh"
+      config.ssh.forward_agent = true
+      config.ssh.forward_x11 = true
+
+      config.vm.provider :virtualbox do |v|
+            v.name = "DragonFlyBSD"
+            v.memory = 1024
+            v.cpus = 2
+      end
+  end
+
+
 # Ansible configuration here, add new builders to jenkins_builders
 
   config.vm.provision "ansible" do |ansible|
@@ -148,10 +167,11 @@ Vagrant.configure("2") do |config|
 
             ansible.groups = {
                   "jenkins_master" => ["Jenkins"],
-                  "jenkins_builders" => ["Ubuntu", "FreeBSD", "OpenBSD", "Debian", "OpenIndiana"],
+                  "jenkins_builders" => ["Ubuntu", "FreeBSD", "OpenBSD", "Debian", "OpenIndiana", "DragonFlyBSD"],
             }
 
             ansible.host_vars = {
+                  "DragonFlyBSD" => { "ansible_python_interpreter" => "/usr/local/bin/python" },
                   "FreeBSD" => { "ansible_python_interpreter" => "/usr/local/bin/python" },
                   "OpenBSD" => { "ansible_python_interpreter" => "/usr/local/bin/python" },
             }

@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
       jenkins.vm.network :private_network, ip: "10.10.10.10"
       jenkins.vm.boot_timeout = 600
 
-      config.vm.synced_folder ".", "/vagrant", type: "virtualbox" disabled: true
+      config.vm.synced_folder ".", "/vagrant", type: "virtualbox", disabled: true
 
       config.ssh.forward_agent = true
       config.ssh.forward_x11 = true
@@ -40,7 +40,7 @@ Vagrant.configure("2") do |config|
       ubuntu.vm.network :private_network, ip: "10.10.10.100"
       ubuntu.vm.boot_timeout = 600
 
-      config.vm.synced_folder ".", "/vagrant", type: "virtualbox" disabled: true
+      config.vm.synced_folder ".", "/vagrant", type: "virtualbox", disabled: true
 
       config.ssh.forward_agent = true
       config.ssh.forward_x11 = true
@@ -62,7 +62,7 @@ Vagrant.configure("2") do |config|
       debian.vm.network :private_network, ip: "10.10.10.101"
       debian.vm.boot_timeout = 600
 
-      config.vm.synced_folder ".", "/vagrant", type: "rsync" disabled: true
+      config.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: true
 
       config.ssh.forward_agent = true
       config.ssh.forward_x11 = true
@@ -84,7 +84,7 @@ Vagrant.configure("2") do |config|
       freebsd.vm.boot_timeout = 600
 
       config.vm.base_mac = "080027D14C66"
-      config.vm.synced_folder ".", "/vagrant", type: "rsync" disabled: true
+      config.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: true
 
       config.ssh.shell = "sh"
       config.ssh.forward_agent = true
@@ -108,7 +108,7 @@ Vagrant.configure("2") do |config|
       openbsd.vm.network :private_network, ip: "10.10.10.103"
       openbsd.vm.boot_timeout = 600
 
-      config.vm.synced_folder ".", "/vagrant", type: "rsync" disabled: true
+      config.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: true
 
       config.ssh.shell = "sh"
       config.ssh.forward_agent = true

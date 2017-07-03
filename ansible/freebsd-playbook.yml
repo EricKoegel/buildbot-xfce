@@ -15,7 +15,7 @@
       changed_when: output.stdout != ""
       tags: always
 
-  - name: gather facts
+    - name: gather facts
       setup:
 
   tasks:

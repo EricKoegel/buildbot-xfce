@@ -1,4 +1,6 @@
 ---
+  - name: Create Jenkins system group
+    group: name={{jenkins_user}} state=present
 
   - name: Create Jenkins system user
     user: name={{jenkins_user}} home={{jenkins_home}} system=yes

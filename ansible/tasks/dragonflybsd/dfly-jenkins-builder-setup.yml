@@ -1,0 +1,13 @@
+---
+
+  - name: Create Jenkins Swarm Client directory
+    file: >
+        path=/opt/jenkins-swarm-client
+        mode=0755
+        state=directory
+
+  - name: Download Jenkins Swarm Client
+    get_url: >
+        url=https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/{{ swarm_client_version }}/swarm-client-{{ swarm_client_version }}.jar
+        dest=/opt/jenkins-swarm-client/swarm-client-{{ swarm_client_version }}.jar
+

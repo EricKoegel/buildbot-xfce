@@ -1,6 +1,6 @@
 ---
-- name: FreeBSD Setup Playbook
-  hosts: FreeBSD
+- name: DragonFlyBSD Setup Playbook
+  hosts: DragonFlyBSD
   become: yes
   remote_user: root
   gather_facts: no
@@ -20,6 +20,5 @@
 
   tasks:
     - include: tasks/freebsd/builder-package-install.yml
-    - include: tasks/freebsd/freebsd-only-package-install.yml
-    - include: tasks/jenkins-builder-setup.yml
+    - include: tasks/dragonflybsd/dfly-jenkins-builder-setup.yml
     - include: tasks/freebsd/swarm-client-install.yml

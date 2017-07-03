@@ -10,7 +10,7 @@
 
   pre_tasks:
     - name: install python2, ansible requires it
-      raw: test -e /usr/bin/python || (pkg install -qy python)
+      raw: test -e /usr/local/bin/python || (pkg install -qy python)
       register: output
       changed_when: output.stdout != ""
       tags: always
@@ -20,5 +20,7 @@
 
   tasks:
     - include: tasks/freebsd/builder-package-install.yml
+    - include: tasks/freebsd/freebsd-only-package-install.yml
+      when: ansible_distribution == "FreeBSD"
     - include: tasks/jenkins-builder-setup.yml
     - include: tasks/freebsd/swarm-client-install.yml

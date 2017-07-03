@@ -10,5 +10,6 @@
 
   tasks:
     - include: tasks/openindiana/builder-package-install.yml
+    - include: tasks/openindiana/jenkins-group-add.yml
     - include: tasks/jenkins-builder-setup.yml
     - include: tasks/openindiana/swarm-client-install.yml

@@ -13,61 +13,61 @@
     builders:
         - multijob:
             name: xfce4-dev-tools
-            condition: SUCCESSFUL
+            condition: ALWAYS
             projects:
                 - name: xfce4-dev-tools
-                  kill-phase-on: FAILURE
-                  abort-all-job: true
+                  kill-phase-on: NEVER
+                  abort-all-job: false
                   current-parameters: true
         - multijob:
             name: libxfce4util
-            condition: SUCCESSFUL
+            condition: ALWAYS
             projects:
                 - name: libxfce4util
-                  kill-phase-on: FAILURE
-                  abort-all-job: true
+                  kill-phase-on: NEVER
+                  abort-all-job: false
                   current-parameters: true
         - multijob:
             name: xfconf
-            condition: SUCCESSFUL
+            condition: ALWAYS
             projects:
                 - name: xfconf
-                  kill-phase-on: FAILURE
-                  abort-all-job: true
+                  kill-phase-on: NEVER
+                  abort-all-job: false
                   current-parameters: true
         - multijob:
             name: libxfce4ui
-            condition: SUCCESSFUL
+            condition: ALWAYS
             projects:
                 - name: libxfce4ui
-                  kill-phase-on: FAILURE
-                  abort-all-job: true
+                  kill-phase-on: NEVER
+                  abort-all-job: false
                   current-parameters: true
         - multijob:
             name: garcon-exo-and-tumbler
-            condition: SUCCESSFUL
+            condition: ALWAYS
             projects:
                 - name: garcon
-                  kill-phase-on: FAILURE
-                  abort-all-job: true
+                  kill-phase-on: NEVER
+                  abort-all-job: false
                   current-parameters: true
 
                 - name: exo
-                  kill-phase-on: FAILURE
-                  abort-all-job: true
+                  kill-phase-on: NEVER
+                  abort-all-job: false
                   current-parameters: true
 
                 - name: tumbler
-                  kill-phase-on: FAILURE
-                  abort-all-job: true
+                  kill-phase-on: NEVER
+                  abort-all-job: false
                   current-parameters: true
         - multijob:
             name: thunar
-            condition: SUCCESSFUL
+            condition: ALWAYS
             projects:
                 - name: thunar
-                  kill-phase-on: FAILURE
-                  abort-all-job: true
+                  kill-phase-on: NEVER
+                  abort-all-job: false
                   current-parameters: true
         - multijob:
             name: xfce-core-others

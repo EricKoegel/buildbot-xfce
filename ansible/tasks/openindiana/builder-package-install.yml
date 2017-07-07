@@ -42,3 +42,7 @@
             - library/libunique
             - metapackages/build-essential
             - x11/library/libdrm
+            - x11/header/*
+            - x11/keyboard/xkb-utilities
+            - x11/x11-server-utilities
+            - developer/opensolaris/X

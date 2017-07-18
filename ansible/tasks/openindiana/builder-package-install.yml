@@ -49,3 +49,4 @@
             - gnome/config/gsettings-desktop-schemas
             - x11/library/mesa
             - x11/library/libpthread-stubs
+            - x11/iceauth

@@ -16,12 +16,12 @@ Vagrant.configure("2") do |config|
       jenkins.vm.network :private_network, ip: "10.10.10.10"
       jenkins.vm.boot_timeout = 600
 
-      config.vm.synced_folder ".", "/vagrant", type: "virtualbox", disabled: true
+      jenkins.vm.synced_folder ".", "/vagrant", type: "virtualbox", disabled: true
 
-      config.ssh.forward_agent = true
-      config.ssh.forward_x11 = true
+      jenkins.ssh.forward_agent = true
+      jenkins.ssh.forward_x11 = true
 
-      config.vm.provider :virtualbox do |v|
+      jenkins.vm.provider :virtualbox do |v|
             v.name = "Jenkins"
             v.memory = 1024
             v.cpus = 1
@@ -40,12 +40,12 @@ Vagrant.configure("2") do |config|
       ubuntu.vm.network :private_network, ip: "10.10.10.100"
       ubuntu.vm.boot_timeout = 600
 
-      config.vm.synced_folder ".", "/vagrant", type: "virtualbox", disabled: true
+      ubuntu.vm.synced_folder ".", "/vagrant", type: "virtualbox", disabled: true
 
-      config.ssh.forward_agent = true
-      config.ssh.forward_x11 = true
+      ubuntu.ssh.forward_agent = true
+      ubuntu.ssh.forward_x11 = true
 
-      config.vm.provider :virtualbox do |v|
+      ubuntu.vm.provider :virtualbox do |v|
             v.name = "Ubuntu"
             v.memory = 1024
             v.cpus = 2
@@ -62,12 +62,12 @@ Vagrant.configure("2") do |config|
       debian.vm.network :private_network, ip: "10.10.10.101"
       debian.vm.boot_timeout = 600
 
-      config.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: true
+      debian.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: true
 
-      config.ssh.forward_agent = true
-      config.ssh.forward_x11 = true
+      debian.ssh.forward_agent = true
+      debian.ssh.forward_x11 = true
 
-      config.vm.provider :virtualbox do |v|
+      debian.vm.provider :virtualbox do |v|
             v.name = "Debian"
             v.memory = 1024
             v.cpus = 2
@@ -83,14 +83,14 @@ Vagrant.configure("2") do |config|
       freebsd.vm.network :private_network, ip: "10.10.10.102"
       freebsd.vm.boot_timeout = 600
 
-      config.vm.base_mac = "080027D14C66"
-      config.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: true
+      freebsd.vm.base_mac = "080027D14C66"
+      freebsd.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: true
 
-      config.ssh.shell = "sh"
-      config.ssh.forward_agent = true
-      config.ssh.forward_x11 = true
+      freebsd.ssh.shell = "sh"
+      freebsd.ssh.forward_agent = true
+      freebsd.ssh.forward_x11 = true
 
-      config.vm.provider :virtualbox do |v|
+      freebsd.vm.provider :virtualbox do |v|
             v.name = "FreeBSD"
             v.memory = 1024
             v.cpus = 2
@@ -108,13 +108,13 @@ Vagrant.configure("2") do |config|
       openbsd.vm.network :private_network, ip: "10.10.10.103"
       openbsd.vm.boot_timeout = 600
 
-      config.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: true
+      openbsd.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: true
 
-      config.ssh.shell = "sh"
-      config.ssh.forward_agent = true
-      config.ssh.forward_x11 = true
+      openbsd.ssh.shell = "sh"
+      openbsd.ssh.forward_agent = true
+      openbsd.ssh.forward_x11 = true
 
-      config.vm.provider :virtualbox do |v|
+      openbsd.vm.provider :virtualbox do |v|
             v.name = "OpenBSD"
             v.memory = 1024
             v.cpus = 2
@@ -128,11 +128,13 @@ Vagrant.configure("2") do |config|
       #openindiana.vm.network "private_network", ip: "10.10.10.104"
       openindiana.vm.boot_timeout = 600
 
-      config.ssh.shell = "sh"
-      config.ssh.forward_agent = true
-      config.ssh.forward_x11 = true
+      openindiana.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: true
 
-      config.vm.provider :virtualbox do |v|
+      openindiana.ssh.shell = "sh"
+      openindiana.ssh.forward_agent = true
+      openindiana.ssh.forward_x11 = true
+
+      openindiana.vm.provider :virtualbox do |v|
             v.name = "OpenIndiana"
             v.memory = 2048
             v.cpus = 2
@@ -146,11 +148,13 @@ Vagrant.configure("2") do |config|
       #dragonfly.vm.network "private_network", ip: "10.10.10.105"
       dragonfly.vm.boot_timeout = 600
 
-      config.ssh.shell = "sh"
-      config.ssh.forward_agent = true
-      config.ssh.forward_x11 = true
+      dragonfly.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: true
 
-      config.vm.provider :virtualbox do |v|
+      dragonfly.ssh.shell = "sh"
+      dragonfly.ssh.forward_agent = true
+      dragonfly.ssh.forward_x11 = true
+
+      dragonfly.vm.provider :virtualbox do |v|
             v.name = "DragonFlyBSD"
             v.memory = 1024
             v.cpus = 2

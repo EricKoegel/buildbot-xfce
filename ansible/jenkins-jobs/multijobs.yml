@@ -9,7 +9,7 @@
     project-type: multijob
     concurrent: true
     triggers:
-        - timed: "H */4 * * *"
+        - timed: "@daily"
     builders:
         - multijob:
             name: xfce4-dev-tools

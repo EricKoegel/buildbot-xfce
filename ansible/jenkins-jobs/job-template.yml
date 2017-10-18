@@ -11,7 +11,6 @@
               - Ubuntu
               - Debian
               - OpenBSD
-              - OpenIndiana
               - DragonFlyBSD
     scm:
       - git:

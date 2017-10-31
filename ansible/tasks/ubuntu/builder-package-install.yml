@@ -66,3 +66,4 @@
                 - libpam0g-dev
                 - libpolkit-gobject-1-dev
                 - xmlto
+                - librsvg2-dev

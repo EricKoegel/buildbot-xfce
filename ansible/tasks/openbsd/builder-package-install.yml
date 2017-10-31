@@ -20,17 +20,17 @@
 
         - name: Install automake package
           package:
-            name: automake-1.15p0
+            name: automake-1.15.1
             state: latest
 
         - name: Install jdk package
           package:
-            name: jdk-1.8.0.72p0v0
+            name: jdk
             state: latest
 
         - name: Install jre package
           package:
-            name: jre-1.8.0.72p0v0
+            name: jre
             state: latest
 
         - name: Install intltool package

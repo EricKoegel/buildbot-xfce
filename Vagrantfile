@@ -104,7 +104,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "OpenBSD" do |openbsd|
 
       openbsd.vm.hostname="OpenBSD"
-      openbsd.vm.box = "trombik/ansible-openbsd-6.0-amd64"
+      openbsd.vm.box = "trombik/ansible-openbsd-6.2-amd64"
       openbsd.vm.network :private_network, ip: "10.10.10.103"
       openbsd.vm.boot_timeout = 600
 

@@ -148,6 +148,11 @@
             name: keybinder
             state: latest
 
+        - name: Install keybinder3 package
+          package:
+            name: keybinder3
+            state: latest
+
         - name: Install vte3 package
           package:
             name: vte3

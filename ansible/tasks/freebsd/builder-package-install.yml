@@ -36,6 +36,7 @@
                 - clutter
                 - libXmu
                 - keybinder
+                - keybinder-gtk3
                 - vte3
                 - vala
                 - gstreamer1-plugins-core

@@ -144,7 +144,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "DragonFlyBSD" do |dragonfly|
 
       #dragonfly.vm.hostname="DragonFlyBSD"
-      dragonfly.vm.box = "erickoegel/dfly48"
+      dragonfly.vm.box = "b00ga/dragonfly50"
       #dragonfly.vm.network "private_network", ip: "10.10.10.105"
       dragonfly.vm.boot_timeout = 600
 

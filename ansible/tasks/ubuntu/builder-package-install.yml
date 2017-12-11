@@ -1,6 +1,6 @@
 ---
         - name: Install packages needed by the Ubuntu builder. This may take a while.
-          package: name={{ item }} state=latest
+          package: name={{ item }} state=latest install_recommends=no
           with_items:
                 - autoconf
                 - automake
@@ -67,3 +67,4 @@
                 - libpolkit-gobject-1-dev
                 - xmlto
                 - librsvg2-dev
+                - libgirepository1.0-dev

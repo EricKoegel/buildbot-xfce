@@ -16,7 +16,7 @@ jenkins_package_state: latest
 jenkins_admin_username: 'admin'
 jenkins_admin_password: 'admin'
 
-swarm_client_version: 3.4
+swarm_client_version: 3.12
 
 openbsd_java_version: 1.8.0
 

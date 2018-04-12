@@ -37,3 +37,14 @@
       src: jenkins-jobs/multijobs.yml
       dest: /home/{{ jenkins_user }}/jenkins_jobs/multijobs.yml
       mode: "u=rw,g=r,o=r"
+
+  - name: Create Jenkins Job init groovy folder
+    file: name=/var/lib/jenkins/init.groovy.d/
+          owner={{ jenkins_user }}
+          group={{ jenkins_user }}
+          state=directory
+
+  - name: Groovy script to enable JNLP on first Jenkins start
+    template:
+      src: template/jnlp.groovy.j2
+      dest: /var/lib/jenkins/init.groovy.d/jnlp.groovy

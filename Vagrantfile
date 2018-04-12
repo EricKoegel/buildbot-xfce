@@ -120,46 +120,46 @@ Vagrant.configure("2") do |config|
             v.cpus = 2
       end
   end
-
-  config.vm.define "OpenIndiana" do |openindiana|
-
-      #openindiana.vm.hostname="OpenIndiana"
-      openindiana.vm.box = "openindiana/hipster"
-      #openindiana.vm.network "private_network", ip: "10.10.10.104"
-      openindiana.vm.boot_timeout = 600
-
-      openindiana.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: true
-
-      openindiana.ssh.shell = "sh"
-      openindiana.ssh.forward_agent = true
-      openindiana.ssh.forward_x11 = true
-
-      openindiana.vm.provider :virtualbox do |v|
-            v.name = "OpenIndiana"
-            v.memory = 2048
-            v.cpus = 2
-      end
-  end
-
-  config.vm.define "DragonFlyBSD" do |dragonfly|
-
-      #dragonfly.vm.hostname="DragonFlyBSD"
-      dragonfly.vm.box = "b00ga/dragonfly50"
-      #dragonfly.vm.network "private_network", ip: "10.10.10.105"
-      dragonfly.vm.boot_timeout = 600
-
-      dragonfly.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: true
-
-      dragonfly.ssh.shell = "sh"
-      dragonfly.ssh.forward_agent = true
-      dragonfly.ssh.forward_x11 = true
-
-      dragonfly.vm.provider :virtualbox do |v|
-            v.name = "DragonFlyBSD"
-            v.memory = 1024
-            v.cpus = 2
-      end
-  end
+#
+#  config.vm.define "OpenIndiana" do |openindiana|
+#
+#      #openindiana.vm.hostname="OpenIndiana"
+#      openindiana.vm.box = "openindiana/hipster"
+#      #openindiana.vm.network "private_network", ip: "10.10.10.104"
+#      openindiana.vm.boot_timeout = 600
+#
+#      openindiana.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: true
+#
+#      openindiana.ssh.shell = "sh"
+#      openindiana.ssh.forward_agent = true
+#      openindiana.ssh.forward_x11 = true
+#
+#      openindiana.vm.provider :virtualbox do |v|
+#            v.name = "OpenIndiana"
+#            v.memory = 2048
+#            v.cpus = 2
+#      end
+#  end
+#
+#  config.vm.define "DragonFlyBSD" do |dragonfly|
+#
+#      #dragonfly.vm.hostname="DragonFlyBSD"
+#      dragonfly.vm.box = "b00ga/dragonfly50"
+#      #dragonfly.vm.network "private_network", ip: "10.10.10.105"
+#      dragonfly.vm.boot_timeout = 600
+#
+#      dragonfly.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: true
+#
+#      dragonfly.ssh.shell = "sh"
+#      dragonfly.ssh.forward_agent = true
+#      dragonfly.ssh.forward_x11 = true
+#
+#      dragonfly.vm.provider :virtualbox do |v|
+#            v.name = "DragonFlyBSD"
+#            v.memory = 1024
+#            v.cpus = 2
+#      end
+#  end
 
 
 # Ansible configuration here, add new builders to jenkins_builders
@@ -171,11 +171,11 @@ Vagrant.configure("2") do |config|
 
             ansible.groups = {
                   "jenkins_master" => ["Jenkins"],
-                  "jenkins_builders" => ["Ubuntu", "FreeBSD", "OpenBSD", "Debian", "OpenIndiana", "DragonFlyBSD"],
+                  "jenkins_builders" => ["Ubuntu", "Debian", "OpenBSD", "FreeBSD"],
             }
 
             ansible.host_vars = {
-                  "DragonFlyBSD" => { "ansible_python_interpreter" => "/usr/local/bin/python" },
+                  #"DragonFlyBSD" => { "ansible_python_interpreter" => "/usr/local/bin/python" },
                   "FreeBSD" => { "ansible_python_interpreter" => "/usr/local/bin/python" },
                   "OpenBSD" => { "ansible_python_interpreter" => "/usr/local/bin/python" },
             }

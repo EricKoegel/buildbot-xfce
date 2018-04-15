@@ -46,5 +46,5 @@
 
   - name: Groovy script to enable JNLP on first Jenkins start
     template:
-      src: template/jnlp.groovy.j2
+      src: templates/jnlp.groovy.j2
       dest: /var/lib/jenkins/init.groovy.d/jnlp.groovy

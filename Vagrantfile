@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "Ubuntu" do |ubuntu|
 
       ubuntu.vm.hostname="Ubuntu"
-      ubuntu.vm.box = "ubuntu/yakkety64"
+      ubuntu.vm.box = "ubuntu/bionic64"
       ubuntu.vm.network :private_network, ip: "10.10.10.100"
       ubuntu.vm.boot_timeout = 600
 

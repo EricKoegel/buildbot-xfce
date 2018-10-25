@@ -81,6 +81,14 @@
           url: git://git.xfce.org/apps/xfce4-notifyd
 
       - '{name}':
+          name: xfce4-panel-profiles
+          url: git://git.xfce.org/apps/xfce4-panel-profiles
+
+      - '{name}':
+          name: xfce4-screensaver
+          url: git://git.xfce.org/apps/xfce4-screensaver
+
+      - '{name}':
           name: xfce4-screenshooter
           url: git://git.xfce.org/apps/xfce4-screenshooter
 
@@ -201,6 +209,10 @@
           url: git://git.xfce.org/panel-plugins/xfce4-systemload-plugin
 
       - '{name}':
+          name: xfce4-verve-plugin
+          url: git://git.xfce.org/panel-plugins/xfce4-verve-plugin
+
+      - '{name}':
           name: xfce4-wavelan-plugin
           url: git://git.xfce.org/panel-plugins/xfce4-wavelan-plugin
 
@@ -216,6 +228,22 @@
           name: xfce4-xkb-plugin
           url: git://git.xfce.org/panel-plugins/xfce4-xkb-plugin
 
+      - '{name}':
+          name: thunar-archive-plugin
+          url: git://git.xfce.org/thunar-plugins/thunar-archive-plugin
 
+      - '{name}':
+          name: thunar-media-tags-plugin
+          url: git://git.xfce.org/thunar-plugins/thunar-media-tags-plugin
 
+      - '{name}':
+          name: thunar-shares-plugin
+          url: git://git.xfce.org/thunar-plugins/thunar-shares-plugin
 
+      - '{name}':
+          name: thunar-vcs-plugin
+          url: git://git.xfce.org/thunar-plugins/thunar-vcs-plugin
+
+      - '{name}':
+          name: thunarx-python
+          url: git://git.xfce.org/bindings/thunarx-python

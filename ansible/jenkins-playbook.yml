@@ -20,8 +20,9 @@
 
   roles:
     - role: geerlingguy.java
-      java_packages:
-        - openjdk-8-jdk
+      vars:
+        java_packages:
+          - openjdk-8-jdk
     - role: ansible-role-jenkins
 
   tasks:

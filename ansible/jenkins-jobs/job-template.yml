@@ -38,7 +38,7 @@
             export AUTOCONF_VERSION
           fi
           echo -e "\e[31m running: ./autogen.sh \e[0m"
-          ./autogen.sh --enable-debug=yes
+          ./autogen.sh --enable-debug=yes --disable-introspection
           if [[ $unamestr == *BSD* ]] || [[ $unamestr == DragonFly ]] || [[ $unamestr == SunOS ]]; then
                   echo -e "\e[31m running: gmake \e[0m"
                   gmake

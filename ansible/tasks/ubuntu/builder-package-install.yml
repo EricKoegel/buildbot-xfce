@@ -69,3 +69,9 @@
                 - librsvg2-dev
                 - libgirepository1.0-dev
                 - libpcre2-dev
+                - python-dev
+                - python-gi-dev
+                - libxss-dev
+                - cmake
+                - libtag1-dev 
+                - libtagc0-dev

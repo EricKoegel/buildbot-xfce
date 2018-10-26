@@ -46,3 +46,6 @@
                 - openjdk8
                 - openjdk8-jre
                 - librsvg2
+                - taglib
+                - cmake
+                - pygobject3-common

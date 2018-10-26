@@ -3,177 +3,44 @@
 #   version of ansible (like 2.2.1.0-1) that can't accept a list
 #   in OpenBSD's package installer
 
-        - name: Install git package
-          package:
-            name: git
-            state: latest
-
-        - name: Install bash package
-          package:
-            name: bash
-            state: latest
-
-        - name: Install autoconf package
-          package:
-            name: autoconf-2.69p2
-            state: latest
-
-        - name: Install automake package
-          package:
-            name: automake-1.15.1
-            state: latest
-
-        - name: Install jdk package
-          package:
-            name: jdk
-            state: latest
-
-        - name: Install jre package
-          package:
-            name: jre
-            state: latest
-
-        - name: Install intltool package
-          package:
-            name: intltool
-            state: latest
-
-        - name: Install gettext package
-          package:
-            name: gettext
-            state: latest
-
-        - name: Install libtool package
-          package:
-            name: libtool
-            state: latest
-
-        - name: Install gmake package
-          package:
-            name: gmake
-            state: latest
-
-        - name: Install gtk-doc package
-          package:
-            name: gtk-doc
-            state: latest
-
-        - name: Install libwnck3 package
-          package:
-            name: libwnck3
-            state: latest
-
-        - name: Install upower package
-          package:
-            name: upower
-            state: latest
-
-        - name: Install libnotify package
-          package:
-            name: libnotify
-            state: latest
-
-        - name: Install p5-URI package
-          package:
-            name: p5-URI
-            state: latest
-
-        - name: Install gtk+2 package
-          package:
-            name: gtk+2
-            state: latest
-
-        - name: Install gtk+3 package
-          package:
-            name: gtk+3
-            state: latest
-
-        - name: Install libwnck package
-          package:
-            name: libwnck
-            state: latest
-
-        - name: Install gobject-introspection package
-          package:
-            name: gobject-introspection
-            state: latest
-
-        - name: Install dbus-glib package
-          package:
-            name: dbus-glib
-            state: latest
-
-        - name: Install gtksourceviewmm3 package
-          package:
-            name: gtksourceviewmm3
-            state: latest
-
-        - name: Install gstreamer package
-          package:
-            name: gstreamer
-            state: latest
-
-        - name: Install libexif package
-          package:
-            name: libexif
-            state: latest
-
-        - name: Install libsoup package
-          package:
-            name: libsoup
-            state: latest
-
-        - name: Install vte package
-          package:
-            name: vte
-            state: latest
-
-        - name: Install libmpd package
-          package:
-            name: libmpd
-            state: latest
-
-        - name: Install pulseaudio package
-          package:
-            name: pulseaudio
-            state: latest
-
-        - name: Install clutter package
-          package:
-            name: clutter
-            state: latest
-
-        - name: Install keybinder package
-          package:
-            name: keybinder
-            state: latest
-
-        - name: Install keybinder3 package
-          package:
-            name: keybinder3
-            state: latest
-
-        - name: Install vte3 package
-          package:
-            name: vte3
-            state: latest
-
-        - name: Install vala package
-          package:
-            name: vala
-            state: latest
-
-        - name: Install gstreamer1-plugins-base package
-          package:
-            name: gstreamer1-plugins-base
-            state: latest
-
-        - name: Install libxklavier package
-          package:
-            name: libxklavier
-            state: latest
-
-        - name: Install libunique package
-          package:
-            name: libunique
-            state: latest
+        - name: Install packages needed by the OpenBSD builder. This may take a while.
+          package: name={{ item }} state=latest
+          with_items:
+            - autoconf
+            - git
+            - bash
+            - autoconf-2.69p2
+            - automake-1.15.1
+            - jdk
+            - jre
+            - intltool
+            - gettext
+            - libtool
+            - gmake
+            - gtk-doc
+            - libwnck3
+            - upower
+            - libnotify
+            - p5-URI
+            - gtk+2
+            - gtk+3
+            - libwnck
+            - gobject-introspection
+            - dbus-glib
+            - gtksourceviewmm3
+            - gstreamer
+            - libexif
+            - libsoup
+            - vte
+            - libmpd
+            - pulseaudio
+            - clutter
+            - keybinder
+            - keybinder3
+            - vte3
+            - vala
+            - gstreamer1-plugins-base
+            - libxklavier
+            - libunique
+            - taglib
+            - cmake

@@ -37,8 +37,18 @@
             export AUTOMAKE_VERSION
             export AUTOCONF_VERSION
           fi
-          echo -e "\e[31m running: ./autogen.sh \e[0m"
-          ./autogen.sh --enable-debug=yes --disable-introspection
+          if [[ -f autogen.sh ]]; then
+            echo -e "\e[31m running: ./autogen.sh \e[0m"
+            ./autogen.sh --enable-debug=yes --disable-introspection
+          elif [[ -f configure ]]; then
+            echo -e "\e[31m running: ./configure \e[0m"
+            ./configure
+          elif [[ -f CMakeLists.txt ]]; then
+            echo -e "\e[31m running: cmake . \e[0m"
+            cmake .
+          else
+                echo -e "\e[31m Unknown build system \e[0m"
+          fi
           if [[ $unamestr == *BSD* ]] || [[ $unamestr == DragonFly ]] || [[ $unamestr == SunOS ]]; then
                   echo -e "\e[31m running: gmake \e[0m"
                   gmake

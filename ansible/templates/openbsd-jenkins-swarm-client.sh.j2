@@ -1,0 +1,14 @@
+#! /bin/ksh
+# {{ ansible_managed }}
+
+SWARM_CLIENT_FILE="/opt/jenkins-swarm-client/swarm-client-{{ swarm_client_version }}.jar"
+daemon="/usr/local/jre-1.8.0/bin/java"
+daemon_flags="-jar ${SWARM_CLIENT_FILE} -master http://10.10.10.10:8080/ -username {{ jenkins_admin_username }} -password {{ jenkins_admin_password }}  -disableClientsUniqueId -sslFingerprints \"\" -name {{ inventory_hostname }} -executors 2 -fsroot /home/vagrant"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon}.*"
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

@@ -1,17 +1,10 @@
 ---
   - name: FreeBSD - Install Jenkins Swarm Client Service
-    template: src=templates/jenkins-swarm-client.sh.j2 dest=/usr/local/etc/rc.d/jenkins-swarm-client mode=0755
-
-  - name: FreeBSD - Enable Jenkins Swarm Client
-    lineinfile: dest=/etc/rc.conf regexp=^jenkins-swarm-client_enable= line=jenkins-swarm-client_enable="YES"
-
-# FIXME
-#  - name: FreeBSD - Start Jenkins Swarm Client Service
-#    service:
-#        name: jenkins-swarm-client
-#        enabled: yes
-#        state: started
-#        use: service
+    template: src=templates/freebsd-jenkins-swarm-client.sh.j2 dest=/usr/local/etc/rc.d/jenkins_swarm_client mode=0755
 
   - name: FreeBSD - Start Jenkins Swarm Client Service
-    command: nohup /usr/local/etc/rc.d/jenkins-swarm-client start
+    service:
+        name: jenkins_swarm_client
+        enabled: yes
+        state: started
+        use: service

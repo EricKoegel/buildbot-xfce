@@ -36,6 +36,7 @@
             AUTOCONF_VERSION=2.69
             export AUTOMAKE_VERSION
             export AUTOCONF_VERSION
+            export CC=clang
           fi
           if [[ -f autogen.sh ]]; then
             echo -e "\e[31m running: ./autogen.sh \e[0m"

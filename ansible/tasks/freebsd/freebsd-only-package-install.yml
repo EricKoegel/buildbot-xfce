@@ -1,8 +1,9 @@
 
         - name: Install packages specific to FreeBSD.
-          package: name={{ item }} state=present
-          with_items:
-                - pulseaudio
-                - mesa-libs
-                - libinput
-                - libudev-devd
+          package:
+            state: present
+            name:
+              - pulseaudio
+              - mesa-libs
+              - libinput
+              - libudev-devd

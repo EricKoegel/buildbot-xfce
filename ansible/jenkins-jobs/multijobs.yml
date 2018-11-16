@@ -282,11 +282,6 @@
                   abort-all-job: false
                   current-parameters: true
 
-                - name: xfce4-mount-plugin
-                  kill-phase-on: NEVER
-                  abort-all-job: false
-                  current-parameters: true
-
                 - name: xfce4-mpc-plugin
                   kill-phase-on: NEVER
                   abort-all-job: false

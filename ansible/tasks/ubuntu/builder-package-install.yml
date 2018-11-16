@@ -1,7 +1,9 @@
 ---
         - name: Install packages needed by the Ubuntu builder. This may take a while.
-          package: name={{ item }} state=latest install_recommends=no
-          with_items:
+          package:
+            state: latest
+            install_recommends: no
+            name:
                 - autoconf
                 - automake
                 - git

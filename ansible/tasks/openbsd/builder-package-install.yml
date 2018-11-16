@@ -1,12 +1,9 @@
 ---
-# - We break out individual packages because we may have an older
-#   version of ansible (like 2.2.1.0-1) that can't accept a list
-#   in OpenBSD's package installer
 
-        - name: Install packages needed by the OpenBSD builder. This may take a while.
-          package: name={{ item }} state=latest
-          with_items:
-            - autoconf
+      - name: Install packages needed by the OpenBSD builder. This may take a while.
+        package:
+          state: latest
+          name:
             - git
             - bash
             - autoconf-2.69p2

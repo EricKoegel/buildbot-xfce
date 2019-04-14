@@ -23,7 +23,7 @@
       vars:
         java_packages:
           - openjdk-8-jdk
-    - role: ansible-role-jenkins
+    - role: geerlingguy.jenkins
 
   tasks:
     - name: install packages needed by the jenkins master

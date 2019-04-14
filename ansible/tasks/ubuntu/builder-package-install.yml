@@ -77,3 +77,4 @@
                 - cmake
                 - libtag1-dev 
                 - libtagc0-dev
+                - dbus-x11

@@ -40,7 +40,7 @@
           fi
           if [[ -f autogen.sh ]]; then
             echo -e "\e[31m running: ./autogen.sh \e[0m"
-            ./autogen.sh --enable-debug=yes --disable-introspection
+            ./autogen.sh --enable-debug=yes --disable-gsettings-backend
           elif [[ -f configure ]]; then
             echo -e "\e[31m running: ./configure \e[0m"
             ./configure

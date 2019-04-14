@@ -79,7 +79,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "FreeBSD" do |freebsd|
 
       freebsd.vm.hostname="FreeBSD"
-      freebsd.vm.box = "freebsd/FreeBSD-12.0-CURRENT"
+      freebsd.vm.box = "freebsd/FreeBSD-12.0-STABLE"
       freebsd.vm.network :private_network, ip: "10.10.10.102"
       freebsd.vm.boot_timeout = 600
 

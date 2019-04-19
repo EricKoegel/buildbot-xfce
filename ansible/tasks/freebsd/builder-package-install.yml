@@ -1,8 +1,9 @@
 ---
 # We use state=present because FreeBSD doesn't like latest
-        - name: Install packages needed by the FreeBSD builder. This may take a while.
-          package: name={{ item }} state=present
-          with_items:
+      - name: Install packages needed by the FreeBSD builder. This may take a while.
+        package:
+          state: present
+          name:
                 - git
                 - bash
                 - autoconf
@@ -46,3 +47,6 @@
                 - openjdk8
                 - openjdk8-jre
                 - librsvg2
+                - taglib
+                - cmake
+                - pygobject3-common

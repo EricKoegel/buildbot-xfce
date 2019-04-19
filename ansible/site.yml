@@ -1,7 +1,7 @@
 ---
-- include: dragonflybsd-playbook.yml
-- include: freebsd-playbook.yml
-- include: jenkins-playbook.yml
-- include: openbsd-playbook.yml
-- include: openindiana-playbook.yml
-- include: ubuntu-playbook.yml
+- import_playbook: dragonflybsd-playbook.yml
+- import_playbook: freebsd-playbook.yml
+- import_playbook: jenkins-playbook.yml
+- import_playbook: openbsd-playbook.yml
+- import_playbook: openindiana-playbook.yml
+- import_playbook: ubuntu-playbook.yml

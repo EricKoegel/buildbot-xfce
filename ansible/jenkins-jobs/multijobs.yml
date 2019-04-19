@@ -126,7 +126,17 @@
                   abort-all-job: false
                   current-parameters: true
 
+                - name: xfce4-panel-profiles
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
                 - name: xfce4-notifyd
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-screensaver
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
@@ -167,6 +177,34 @@
                   current-parameters: true
 
                 - name: xfmpc
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+        - multijob:
+            name: thunar-plugins
+            condition: ALWAYS
+            projects:
+                - name: thunar-archive-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: thunar-media-tags-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: thunar-shares-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: thunar-vcs-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: thunarx-python
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true
@@ -244,11 +282,6 @@
                   abort-all-job: false
                   current-parameters: true
 
-                - name: xfce4-mount-plugin
-                  kill-phase-on: NEVER
-                  abort-all-job: false
-                  current-parameters: true
-
                 - name: xfce4-mpc-plugin
                   kill-phase-on: NEVER
                   abort-all-job: false
@@ -285,6 +318,11 @@
                   current-parameters: true
 
                 - name: xfce4-systemload-plugin
+                  kill-phase-on: NEVER
+                  abort-all-job: false
+                  current-parameters: true
+
+                - name: xfce4-verve-plugin
                   kill-phase-on: NEVER
                   abort-all-job: false
                   current-parameters: true

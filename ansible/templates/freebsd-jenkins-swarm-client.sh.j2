@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: jenkins_swarm_client
+# KEYWORD: jenkins_swarm_client
+
+jenkins_swarm_client_flags=${jenkins_swarm_client-"-jar /opt/jenkins-swarm-client/swarm-client-{{ swarm_client_version }}.jar -master http://10.10.10.10:8080/ -username {{ jenkins_admin_username }} -password {{ jenkins_admin_password }}  -disableClientsUniqueId -sslFingerprints \"\" -name {{ inventory_hostname }} -executors 2 -fsroot /home/vagrant"}
+
+. /etc/rc.subr
+
+name=jenkins_swarm_client
+rcvar=jenkins_swarm_client_enable
+load_rc_config $name
+
+start_cmd=jenkins_swarm_client_start
+stop_cmd=jenkins_swarm_client_stop
+
+command="/usr/local/bin/java"
+# Need to reset the PATH otherwise swarm-client has weird behavior (why ?)
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+
+
+jenkins_swarm_client_start() {
+  /usr/sbin/daemon -cf ${command} ${jenkins_swarm_client_flags}
+}
+
+jenkins_swarm_client_stop() {
+  pkill -f swarm-client
+}
+run_rc_command "$1"
+

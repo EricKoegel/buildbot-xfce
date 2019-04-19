@@ -1,7 +1,9 @@
 ---
         - name: Install packages needed by the Ubuntu builder. This may take a while.
-          package: name={{ item }} state=latest install_recommends=no
-          with_items:
+          package:
+            state: latest
+            install_recommends: no
+            name:
                 - autoconf
                 - automake
                 - git
@@ -69,3 +71,10 @@
                 - librsvg2-dev
                 - libgirepository1.0-dev
                 - libpcre2-dev
+                - python-dev
+                - python-gi-dev
+                - libxss-dev
+                - cmake
+                - libtag1-dev 
+                - libtagc0-dev
+                - dbus-x11

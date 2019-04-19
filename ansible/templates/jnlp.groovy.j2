@@ -1,0 +1,9 @@
+import hudson.model.*;
+import jenkins.model.*;
+
+
+Thread.start {
+      println "--> setting agent port for jnlp"
+      Jenkins.instance.setSlaveAgentPort(0)
+      println "--> setting agent port for jnlp... done"
+}

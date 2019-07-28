@@ -8,8 +8,6 @@
     name: Xfce-Core
     project-type: multijob
     concurrent: true
-    triggers:
-        - timed: "@daily"
     builders:
         - multijob:
             name: xfce4-dev-tools

@@ -16,7 +16,7 @@
           url: '{url}'
           branches:
               - origin/master
-          wipe-workspace: false
+          wipe-workspace: true
           skip-tag: true
           per-build-tag: false
           git-config-name: "Xfce Buildbot"
@@ -27,9 +27,11 @@
           PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/local/libdata/pkgconfig:/usr/lib/pkgconfig
           LD_LIBRARY_PATH=/usr/local/lib:/usr/lib
           PATH=/usr/gnu/bin/:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/gnu/bin:/bin:/usr/X11R6/bin
+          LDFLAGS="-L/usr/lib -L/usr/local/lib"
           export PATH
           export PKG_CONFIG_PATH
           export LD_LIBRARY_PATH
+          export LDFLAGS
           unamestr=`uname`
           if [[ $unamestr == OpenBSD ]]; then
             AUTOMAKE_VERSION=1.15
@@ -37,7 +39,6 @@
             export AUTOMAKE_VERSION
             export AUTOCONF_VERSION
             export CC=clang
-            option="--disable-introspection"
           fi
           if [[ -f autogen.sh ]]; then
             echo -e "\e[31m running: ./autogen.sh \e[0m"

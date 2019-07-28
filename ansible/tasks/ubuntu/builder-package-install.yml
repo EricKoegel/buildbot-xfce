@@ -41,7 +41,7 @@
                 - gobject-introspection
                 - libgtk-3-0
                 - libgtk-3-dev
-                - openjdk-8-jdk
+                - default-jre
                 - libdbus-glib-1-dev
                 - libupower-glib-dev
                 - libwnck-3-dev

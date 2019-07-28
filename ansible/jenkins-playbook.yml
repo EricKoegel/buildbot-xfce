@@ -25,7 +25,7 @@
           - openjdk-8-jdk
     - role: geerlingguy.jenkins
 
-  tasks:
+  post_tasks:
     - name: install packages needed by the jenkins master
       include: tasks/jenkins/jenkins-master-package-install.yml
 
